@@ -1,4 +1,20 @@
 TweetBookOnRails::Application.routes.draw do
+  
+  get "sessions/new"
+
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+  
+  root :to => 'pages#login'
+  match '/signup', :to => 'users#new' 
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
+  match '/faq', :to => 'pages#faq'
+  match '/cuenta', :to => 'pages#cuenta'
+  match '/help', :to => 'pages#help'
+  
+  
+    
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

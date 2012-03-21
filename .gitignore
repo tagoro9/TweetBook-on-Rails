@@ -1,7 +1,0 @@
-.bundle
-db/*.sqlite3
-log/*.log
-tmp/
-.project
-Gemfile.log
-webrat.log
