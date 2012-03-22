@@ -9,6 +9,10 @@ class PagesController < ApplicationController
     
   end
   
+  def about
+    @title = "Sobre nosotros"
+  end
+  
   def faq
     @title = "FAQ"
   end

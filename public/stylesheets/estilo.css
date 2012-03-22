@@ -1,17 +1,66 @@
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
-	/*background-color: #0575C1;*/
-	/*background-color:white;*/
+}
+
+body.login {
 	background-color: #6C009E;
 }
+
+/****************************** HEADER *****************************/
+ul.nav li.home {
+	/*background-image:url('../images/icons/home.png'); 
+	width:70px;
+	text-align:right;*/
+}
+/***************************** FIN HEADER *************************/
+
+/***************************** LOGIN HEADER *************************/
+#loginArriba input[type=text], #loginArriba input[type=password] {
+	width:120px;
+	height: 13px;
+}
+
+#loginArriba input {
+	margin-top:7px;
+	height: 25px;
+}
+/****************************** FIN LOGIN HEADER ********************/
+
 
 /****************************** LOGIN *********************/
 
 /*Parte Izquierda*/
 
+.front-card .i1{
+	background: url("../images/welcome/1.jpg") no-repeat scroll left top #000;	
+}
+
+.front-card .i2{
+	background: url("../images/welcome/2.jpg") no-repeat scroll left top #000;	
+}
+
+.front-card .i3{
+	background: url("../images/welcome/3.jpg") no-repeat scroll left top #000;
+}
+
+.front-card .i4{
+	background: url("../images/welcome/4.jpg") no-repeat scroll left top #000;
+}
+
+.front-card .i5{
+	background: url("../images/welcome/5.jpg") no-repeat scroll left top #000;
+}
+
+.front-card .i6{
+	background: url("../images/welcome/6.jpg") no-repeat scroll left top #000;
+}
+
+.front-card .i7{
+	background: url("../images/welcome/7.jpg") no-repeat scroll left top #000;
+}
+
 .front-card .front-welcome {
-    background: url("http://lorempixel.com/520/380/people/") no-repeat scroll left top #000000;
     border: 0 none;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 125px rgba(255, 255, 255, 0.35);
     display: block;
@@ -38,16 +87,20 @@ body {
 
 .front-welcome-text {
     bottom: 0;
-    color: #EEEEEE;
+    color: #EEE;
     font-size: 20px;
     font-weight: 300;
-    left: 0;
+    left: 20px;
+    margin-bottom: 20px;
     line-height: 22px;
     padding: 20px;
     position: absolute;
     text-align: left;
     text-shadow: 0 1px 2px #000000;
-    width: 470px;
+    width: 430px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    background: rgba(234,191,9,0.5);
 }
 
 .front-welcome-text h1 {
@@ -83,18 +136,44 @@ body {
 }
 
 .front-signin, .front-signup {
-	background:#fff;
-	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#ddd));
-	background:-webkit-linear-gradient(top,#fff 0,#ddd 100%);
-	background:-moz-linear-gradient(top,#fff 0,#ddd 100%);
-	background:-ms-linear-gradient(top,#fff 0,#ddd 100%);
-	background:-o-linear-gradient(top,#fff 0,#ddd 100%);
-	background:linear-gradient(top,#fff 0,#ddd 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#dddddd',GradientType=0);
-    border-bottom: 1px solid #CCCCCC;
-    border-left: 1px solid #EEEEEE;
-    border-right: 1px solid #EEEEEE;
+	background:#EABF09;
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#EABF09),color-stop(100%,#D36702));
+	background:-webkit-linear-gradient(top,#EABF09 0,#D36702 100%);
+	background:-moz-linear-gradient(top,#EABF09 0,#D36702 100%);
+	background:-ms-linear-gradient(top,#EABF09 0,#D36702 100%);
+	background:-o-linear-gradient(top,#EABF09 0,#D36702 100%);
+	background:linear-gradient(top,#EABF09 0,#D36702 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#EABF09',endColorstr='#D36702',GradientType=0);
+    border-bottom: 1px solid #D36702;
+    border-left: 1px solid #D36702;
+    border-right: 1px solid #D36702;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tweetBookButton:hover,.tweetBookButton[disabled] {
+	background-color: #6C009E;
+}
+
+.tweetBookButton {
+	background-color: #AC23EB;
+	background-image: -moz-linear-gradient(top, #AC23EB, #6C009E);
+	background-image: -ms-linear-gradient(top, #AC23EB, #6C009E);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#AC23EB), to(#6C009E));
+	background-image: -webkit-linear-gradient(top, #AC23EB, #6C009E);
+	background-image: -o-linear-gradient(top, #AC23EB, #6C009E);
+	background-image: linear-gradient(top, #AC23EB, #6C009E);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#AC23EB', endColorstr='#6C009E', GradientType=0);
+	border-color: #6C009E #6C009E #6C009E;
+	color: #FFF;	
+}
+
+
+::-webkit-input-placeholder {
+    color: rgba(108,0,158,0.5);
+}
+:-moz-placeholder {
+    color: rgba(108,0,158,0.5);
 }
 
 /* Login form */
@@ -102,6 +181,14 @@ body {
 #login {
 	padding: 10px;
 }
+
+#login input {
+	color:#D36702;
+}
+
+/*#login input:active {
+	border-color: #6C009E;
+}*/
 
 #login #session_email {
 	height:20px;
@@ -115,6 +202,7 @@ body {
 #login #entrar {
 	height:30px;
 	float:right;
+	color: #FFF;
 }
 
 
@@ -137,9 +225,9 @@ body {
 /* Signup form */
 
 .front-signup h2 {
-    border-bottom: 1px solid #E2E2E2;
-    box-shadow: 0 1px 0 #FFFFFF;
-    color: #777777;
+    /*border-bottom: 1px solid #999;
+    box-shadow: 0 1px 0 #6C009E;*/
+    color: #6C009E;
     display: block;
     font-size: 15px;
     font-weight: 300;
@@ -152,6 +240,7 @@ body {
 	height: 20px;
 	width: 266px;
 	margin-left: 10px;
+	color: #D36702;
 }
 
 #registrar {
@@ -181,27 +270,28 @@ body {
     color: rgba(255, 255, 255, 0.15);
     font-size: 11px;
     text-align: center;
-    width:60%;
+    width:65%;
 }
 .container .footer a {
-    color: #777777;
+    color: #EABF09;
 }
-.container .footer a {
-    -moz-transition: color 0.2s linear 0s;
-    color: rgba(255, 255, 255, 0.3);
-}
+
 .container .footer ul {
     display: inline-block;
     margin-left:auto;
     margin-right:auto;
 }
 .container .footer a:hover {
-    color: #FFFFFF;
+    color: #FFF;
     text-decoration: none;
 }
 .container .footer li {
     display: inline;
     margin: 0 3px;
+}
+
+.container .footer .copyright {
+	color: rgba(255,255,255,0.4);
 }
 .front-container .footer .divider {
     display: none;
@@ -309,6 +399,45 @@ body {
 	list-style-image: url('https://si0.twimg.com/a/1334853862/phoenix/img/error.png');
 }
 
+
+/********************** HOME *********************/
+
+#home {
+	padding:15px;
+	padding-left: 45px;
+	padding-top: 30px;
+	background: rgba(108,0,158,0.5);
+	border-radius: 10px;
+}
+
+#home .post {
+	max-height: 80px;
+	border: 2px solid #000;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+.feedTitle {
+	margin-bottom: 30px;
+}
+
+.post .avatar {
+	width:50px;
+}
+
+.post .avatar img {
+	border-radius:5px;
+}
+
+.post .postContent {
+	width:430px;
+	position:relative;
+	top:-55px;
+	margin-left: 60px;
+}
+
+/********************* FIN HOME ******************/
 
 
 
