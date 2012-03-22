@@ -12,6 +12,7 @@ TweetBookOnRails::Application.routes.draw do
   match '/faq', :to => 'pages#faq'
   match '/cuenta', :to => 'pages#cuenta'
   match '/help', :to => 'pages#help'
+  match 'about', :to => 'pages#about'
   
   
     

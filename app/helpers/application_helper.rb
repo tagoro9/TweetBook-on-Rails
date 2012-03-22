@@ -1,10 +1,14 @@
 module ApplicationHelper
   def header
-    if @title == "Inicio"
+    if !signed_in?
       render 'layouts/login_header'
     else
       render 'layouts/header'
     end
+  end
+  
+  def bodyClass
+    return "login" if @title == "Inicio"
   end
   
   def footer

@@ -6,11 +6,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">TweetBook On Rails</a>
-          <div class="nav-collapse">
+          <a class="brand" href="<%= root_path %>">TweetBook On Rails</a>
+          <% if @title != 'Inicio'%>
+			<%=form_for(:session, :url => sessions_path, :html => {:id => 'loginArriba',:class => 'navbar-form pull-right'}) do |f| %>			
+			  		<%= f.text_field(:email, :placeholder => 'Email') %>
+				  	<%= f.password_field(:password, :placeholder => 'Contraseña') %>
+				  	<%= f.submit("Entrar", :class => 'btn btn-primary tweetBookButton', :id => 'entrarArriba') %>
+			<% end %>			
+          <% end%>
+          <!--<div class="nav-collapse">
             <ul class="nav">
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>--><!--/.nav-collapse -->
         </div>
       </div>
     </div>
