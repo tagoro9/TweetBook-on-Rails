@@ -22,7 +22,7 @@ describe "PresenciaDePaginas" do
                                   :type => 'submit',
                                   :value => 'Entrar')
       end
-      response.should have_selector('form', :id => 'login') do |form|
+      response.should have_selector('form', :id => 'signup') do |form|
         # Debe tener un formulario para crear una cuenta nueva con los campos:
         form.should have_selector('input',          # Caja de texto para introducir nombre de usuario
                                   :type => 'text',
