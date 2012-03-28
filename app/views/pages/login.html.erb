@@ -1,0 +1,18 @@
+<%=form_tag({:action => :login},{:id => 'login'}) do %>
+  	<%= text_field_tag(:username) %>
+  	<%= password_field_tag(:passw) %>
+  	<%= check_box_tag(:recordar) %>
+  	<%= label_tag(:recordar, "Recordar contraseña") %>
+	<%= submit_tag("Entrar") %>
+<% end %>
+
+
+
+
+
+<form id="signup">
+	<input type="text" name="nombre_completo"/>
+	<input type="text" name="email"/>
+	<input type="password" name="passw"/>
+	<input type="submit" Value="Registrar"/>
+</form>

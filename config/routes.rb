@@ -1,4 +1,10 @@
 TweetBookOnRails::Application.routes.draw do
+  
+  
+  
+  root :to => 'pages#login'
+  match '/faq', :to => 'pages#faq'
+  match '/cuenta', :to => 'pages#cuenta'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
