@@ -1,6 +1,6 @@
 TweetBookOnRails::Application.routes.draw do
   
-  
+  resources :users
   
   root :to => 'pages#login'
   match '/faq', :to => 'pages#faq'
