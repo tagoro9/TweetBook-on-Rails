@@ -1,0 +1,222 @@
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+	background-color: #0575C1;
+}
+
+/****************************** LOGIN *********************/
+
+/*Parte Izquierda*/
+
+.front-card .front-welcome {
+    background: url("http://a0.twimg.com/a/1334333797/t1/img/front_page/city-balcony.jpg") no-repeat scroll left top #000000;
+    border: 0 none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 125px rgba(255, 255, 255, 0.35);
+    display: block;
+    height: 328px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 520px;	
+    border-radius: 6px;
+} 
+
+.front-card {
+    left: 50%;
+    position: absolute;
+    width: 838px;
+}
+.front-card {
+    height: 328px;
+    margin: -154px 0 0 -418px;
+    top: 50%;
+    width: 838px;
+}
+
+.front-card .text-input {
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 1px 0 #EEEEEE inset, 0 1px 0 #FFFFFF;
+}
+
+.front-welcome-text {
+    bottom: 0;
+    color: #EEEEEE;
+    font-size: 20px;
+    font-weight: 300;
+    left: 0;
+    line-height: 22px;
+    padding: 20px;
+    position: absolute;
+    text-align: left;
+    text-shadow: 0 1px 2px #000000;
+    width: 470px;
+}
+.front-welcome-text h1 {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+/* Login & Signup Forms layout */
+
+.front-signin {
+    height: 108px;
+    left: 536px;
+    position: absolute;
+    top: 0;
+    width: 300px;
+}
+.front-signup {
+    height: 206px;
+    left: 536px;
+    position: absolute;
+    top: 121px;
+    width: 300px;
+}
+.front-welcome, .front-signin, .front-signup {
+    border-radius: 4px 4px 4px 4px;
+}
+.front-signup .signup {
+    padding: 0;
+}
+.front-signin, .front-signup {
+	background:#fff;
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#ddd));
+	background:-webkit-linear-gradient(top,#fff 0,#ddd 100%);
+	background:-moz-linear-gradient(top,#fff 0,#ddd 100%);
+	background:-ms-linear-gradient(top,#fff 0,#ddd 100%);
+	background:-o-linear-gradient(top,#fff 0,#ddd 100%);
+	background:linear-gradient(top,#fff 0,#ddd 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#dddddd',GradientType=0);
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #EEEEEE;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Login form */
+
+#login {
+	padding: 10px;
+}
+
+#login #username {
+	height:20px;
+	width:266px;
+}
+
+#login #passw {
+    width: 100%;
+}
+
+#login td.primary {
+	width:70%;
+	padding-right:20px;
+}
+
+#login td.secondary {
+	width:20%;
+}
+
+#login #entrar {
+	height:30px;
+}
+.remember {
+    left: 12px;
+    margin: 0;
+    position: absolute;
+    top: 82px;
+    width: 276px;
+}
+
+.front-signin .password-signin {
+    left: 12px;
+    position: absolute;
+    top: 48px;
+    width: 276px;
+}
+
+/* Signup form */
+
+.front-signup h2 {
+    border-bottom: 1px solid #E2E2E2;
+    box-shadow: 0 1px 0 #FFFFFF;
+    color: #777777;
+    display: block;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    padding: 9px 10px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+#signup input {
+	margin-left:20px;
+	height:17px;	
+}
+
+#signup #registrar {
+	float:right;
+	margin-right:10px;
+	height:25px;
+}
+
+/******************** FIN LOGIN ****************/
+
+/**************** FOOTER *******************/ 
+
+.inline-list {
+    margin-left: 0;
+}
+.inline-list li {
+    display: inline;
+}
+
+.inline-list li a {
+	color: #FFFFFF;
+}
+
+.container .footer {
+    bottom: 30px;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 11px;
+    text-align: center;
+    width:60%;
+}
+.container .footer a {
+    color: #777777;
+}
+.container .footer a {
+    -moz-transition: color 0.2s linear 0s;
+    color: rgba(255, 255, 255, 0.3);
+}
+.container .footer ul {
+    display: inline-block;
+    margin-left:auto;
+    margin-right:auto;
+}
+.container .footer a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.container .footer li {
+    display: inline;
+    margin: 0 3px;
+}
+.front-container .footer .divider {
+    display: none;
+}
+
+
+/******************* FIN FOOTER ****************/
+
+/******************* DEBUG PARAMS ***************/
+
+.debug_dump {
+	position:absolute;
+	bottom: 10px;
+	margin-left: 200px;
+}
+
+/****************** FIN DEBUG PARAMS ******************/

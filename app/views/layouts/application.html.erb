@@ -3,9 +3,14 @@
 	<head>
   		<title><%= @title %></title>
 		<%= csrf_meta_tag %>
+		<%= render 'layouts/stylesheets' %>
 	</head>
 	<body>
-		<%= yield %>
-		<%= debug(params) if Rails.env.development? %>
+		<div class="container" id="content">
+			<%= header %>
+			<%= yield %>
+			<%= footer %>
+			<!--<%= debug(params) if Rails.env.development? %>-->
+		</div>		
 	</body>
 </html>

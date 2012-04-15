@@ -3,6 +3,10 @@ class PagesController < ApplicationController
     @title = "Inicio"
   end  
   
+  def signup
+    
+  end
+  
   def faq
     @title = "FAQ"
   end
