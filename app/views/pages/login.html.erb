@@ -21,11 +21,12 @@
       </div>
       <div class="front-signup">
       	<h2>¿Eres nuevo en TweetBook? Regístrate</h2>
-		<%=form_tag({:action => :signup},{:id => 'signup'}) do %>
-		  	<%= text_field_tag(:nombre_completo, 'Nombre completo') %>
-		  	<%= text_field_tag(:email, 'Correo electrónico') %>
-		  	<%= password_field_tag(:passw,'Contraseña') %>
-			<%= submit_tag("Registrar", :class => 'btn btn-primary', :id => 'registrar') %>
+		<%=form_for(@user) do |f| %>
+		  	<%= f.text_field :name %>
+		  	<%= f.text_field :email %>
+		  	<%= f.password_field :password %>
+		  	<%= f.password_field :password_confirmation %>
+			<%= f.submit("Registrar", :class => 'btn btn-primary', :id => 'registrar') %>
 		<% end %>      	
       </div>
     </div>
