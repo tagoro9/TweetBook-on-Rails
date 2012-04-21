@@ -25,17 +25,20 @@ describe "PresenciaDePaginas" do
                                   :type => 'submit',
                                   :value => 'Entrar')
       end
-      response.should have_selector('form', :id => 'signup') do |form|
+      response.should have_selector('form', :id => 'new_user') do |form|
         # Debe tener un formulario para crear una cuenta nueva con los campos:
         form.should have_selector('input',          # Caja de texto para introducir nombre de usuario
                                   :type => 'text',
-                                  :name => 'nombre_completo')
+                                  :id => 'user_name')
         form.should have_selector('input',          # Caja de texto para introducir la dirección de correo
                                   :type => 'text',
-                                  :name => 'email')
+                                  :id => 'user_email')
         form.should have_selector('input',          # Caja de texto para introducir la contraseña
                                   :type => 'password',
-                                  :name => 'passw')
+                                  :id => 'user_password')
+        form.should have_selector('input',          # Caja de texto para introducir la confirmacion de la contraseña
+                                  :type => 'password',
+                                  :id => 'user_password_confirmation')                                  
         form.should have_selector('input',          # Botón para enviar los datos y darse de alta
                                   :type => 'submit',
                                   :value => 'Registrar')
