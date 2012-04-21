@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def login
     @title = "Inicio"
+    @user = User.new
   end  
   
   def signup
