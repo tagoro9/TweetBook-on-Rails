@@ -16,4 +16,8 @@ class PagesController < ApplicationController
     @title = "Cuenta"
   end
   
+  def help
+    @title = "Help"
+  end
+  
 end
