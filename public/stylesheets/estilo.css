@@ -2,7 +2,8 @@ body {
 	padding-top: 60px;
 	padding-bottom: 40px;
 	/*background-color: #0575C1;*/
-	background-color:white;
+	/*background-color:white;*/
+	background-color: #6C009E;
 }
 
 /****************************** LOGIN *********************/
@@ -88,7 +89,8 @@ body {
 	background:-moz-linear-gradient(top,#fff 0,#ddd 100%);
 	background:-ms-linear-gradient(top,#fff 0,#ddd 100%);
 	background:-o-linear-gradient(top,#fff 0,#ddd 100%);
-	background:linear-gradient(top,#fff 0,#ddd 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#dddddd',GradientType=0);
+	background:linear-gradient(top,#fff 0,#ddd 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#dddddd',GradientType=0);
     border-bottom: 1px solid #CCCCCC;
     border-left: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
