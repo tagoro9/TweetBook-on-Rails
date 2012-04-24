@@ -101,19 +101,21 @@ body {
 	padding: 10px;
 }
 
-#login #username {
+#login #session_email {
 	height:20px;
 	width:266px;
 }
 
-#login #passw {
+#login #session_password {
     width: 70%;
 }
 
 #login #entrar {
 	height:30px;
-	margin-left: 12px;
+	float:right;
 }
+
+
 .remember {
     left: 12px;
     margin: 0;

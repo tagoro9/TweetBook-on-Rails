@@ -5,11 +5,11 @@
         <p>Descubre lo que está pasando ahora, con las personas y grupos que te interesan.</p>
       </div>
       <div class="front-signin">
-		<%=form_tag({:action => :login},{:id => 'login'}) do %>			
-		  	<%= text_field_tag(:username, nil, :placeholder => 'Nombre de usuario') %>
+		<%=form_for(:session, :url => sessions_path, :html => {:id => :login}) do |f| %>			
+		  	<%= f.text_field(:email, :placeholder => 'Email') %>
 		  	<div class="password-signin">
-			  	<%= password_field_tag(:passw,nil, :placeholder => 'Contraseña') %>
-			  	<%= submit_tag("Entrar", :class => 'btn btn-primary', :id => 'entrar') %>
+			  	<%= f.password_field(:password, :placeholder => 'Contraseña') %>
+			  	<%= f.submit("Entrar", :class => 'btn btn-primary', :id => 'entrar') %>
 		  	</div>
 			<div class="remember">
 		  		<%= check_box_tag(:recordar) %>
