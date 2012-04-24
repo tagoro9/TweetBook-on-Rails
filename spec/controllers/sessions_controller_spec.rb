@@ -36,7 +36,7 @@ describe SessionsController do
 
       it "should have a flash.now message" do
         post :create, :session => @attr
-        flash.now[:error].should =~ /invalid/i
+        flash.now[:error].should =~ /incorrecto/i
       end
     end
     

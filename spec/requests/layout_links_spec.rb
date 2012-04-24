@@ -30,7 +30,8 @@ describe "LinksDePaginas" do
     get '/faq'
     response.should have_selector('title', :content => "FAQ")
   end
-  
+
+=begin
     describe "when not signed in" do
     it "should have a signin link" do
       visit root_path
@@ -38,6 +39,7 @@ describe "LinksDePaginas" do
                                          :content => "Sign in")
     end
   end
+=end
 
   describe "when signed in" do
 

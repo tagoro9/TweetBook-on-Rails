@@ -122,7 +122,7 @@ describe "Users" do
         fill_in :email,    :with => ""
         fill_in :password, :with => ""
         click_button
-        response.should have_selector("div.flash.error", :content => "Invalid")
+        response.should have_selector("div.flash.error", :content => "incorrecto")
       end
     end
 

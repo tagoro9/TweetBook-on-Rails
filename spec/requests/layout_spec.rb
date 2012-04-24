@@ -11,10 +11,10 @@ describe "PresenciaDePaginas" do
         # Debe tener un formulario para hacer login con los campos:
         form.should have_selector('input',          # Caja de texto para introducir nombre de usuario
                                   :type => 'text',
-                                  :name => 'username')
+                                  :id => 'session_email')
         form.should have_selector('input',          # Caja de texto para introducir la contraseña
                                   :type => 'password',
-                                  :name => 'passw')
+                                  :id => 'session_password')
         form.should have_selector('input',          # Casilla para hacer que la sesión no caduque al cerrar
                                   :type => 'checkbox',
                                   :name => 'recordar')
