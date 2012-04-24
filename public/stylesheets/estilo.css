@@ -1,7 +1,8 @@
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
-	background-color: #0575C1;
+	/*background-color: #0575C1;*/
+	background-color:white;
 }
 
 /****************************** LOGIN *********************/
@@ -13,7 +14,7 @@ body {
     border: 0 none;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 125px rgba(255, 255, 255, 0.35);
     display: block;
-    height: 328px;
+    height: 372px;
     left: 0;
     position: absolute;
     top: 0;
@@ -23,14 +24,10 @@ body {
 
 .front-card {
     left: 50%;
+    top: 50%;
     position: absolute;
     width: 838px;
-}
-.front-card {
-    height: 328px;
     margin: -154px 0 0 -418px;
-    top: 50%;
-    width: 838px;
 }
 
 .front-card .text-input {
@@ -51,6 +48,7 @@ body {
     text-shadow: 0 1px 2px #000000;
     width: 470px;
 }
+
 .front-welcome-text h1 {
     color: #FFFFFF;
     font-size: 20px;
@@ -68,18 +66,21 @@ body {
     width: 300px;
 }
 .front-signup {
-    height: 206px;
+    height: 250px;
     left: 536px;
     position: absolute;
     top: 121px;
     width: 300px;
 }
+
 .front-welcome, .front-signin, .front-signup {
     border-radius: 4px 4px 4px 4px;
 }
+
 .front-signup .signup {
     padding: 0;
 }
+
 .front-signin, .front-signup {
 	background:#fff;
 	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(100%,#ddd));
@@ -100,27 +101,21 @@ body {
 	padding: 10px;
 }
 
-#login #username {
+#login #session_email {
 	height:20px;
 	width:266px;
 }
 
-#login #passw {
-    width: 100%;
-}
-
-#login td.primary {
-	width:70%;
-	padding-right:20px;
-}
-
-#login td.secondary {
-	width:20%;
+#login #session_password {
+    width: 70%;
 }
 
 #login #entrar {
 	height:30px;
+	float:right;
 }
+
+
 .remember {
     left: 12px;
     margin: 0;
@@ -130,7 +125,8 @@ body {
 }
 
 .front-signin .password-signin {
-    left: 12px;
+    left: 10px;
+    margin: 0;
     position: absolute;
     top: 48px;
     width: 276px;
@@ -145,20 +141,21 @@ body {
     display: block;
     font-size: 15px;
     font-weight: 300;
-    margin-bottom: 12px;
-    padding: 9px 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-#signup input {
-	margin-left:20px;
-	height:17px;	
+.campos input{
+	height: 20px;
+	width: 266px;
+	margin-left: 10px;
 }
 
-#signup #registrar {
+#registrar {
 	float:right;
-	margin-right:10px;
-	height:25px;
+	margin-right:15px;
+	height:30px;
 }
 
 /******************** FIN LOGIN ****************/
@@ -220,3 +217,96 @@ body {
 }
 
 /****************** FIN DEBUG PARAMS ******************/
+
+
+
+/*
+ * 			PAGINA REGISTRO
+ */
+
+#signup-wrapper{
+	display:block;
+	width:585px;
+	clear:both;
+	margin: 0 auto 10px;
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, .1);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+#signup-wrapper h1{
+	padding:40px 0 20px 0;
+	margin-left:30px;
+	clear:both;
+	color: #333;
+	display: block;
+	font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 24px;
+}
+
+.field {
+	margin-left: 30px;
+}
+
+.field input{
+	width:400px;
+	height:20px;
+}
+.field label{
+	float: right;
+	margin-right: 60px;
+	line-height: 28px;
+}
+
+#user_submit {
+	width: 410px;
+	margin: 10px 0 0 30px;
+	padding: 5px;
+	padding: 7px 0;
+	color: #333;
+	font-weight: bold;
+	background-color: #FFEC46;
+	background-repeat: repeat-x;
+	background-image: -khtml-gradient(linear,left top,left bottom,from(#FFEC46),to(#FA2));
+	background-image: -moz-linear-gradient(#FFEC46,#FA2);
+	background-image: -ms-linear-gradient(#FFEC46,#FA2);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FFEC46),color-stop(100%,#FA2));
+	background-image: -webkit-linear-gradient(#FFEC46,#FA2);
+	background-image: -o-linear-gradient(#FFEC46,#FA2);
+	background-image: linear-gradient(#FFEC46,#FA2);
+	border-color: #FD9D00;
+	
+}
+	
+	
+#user_submit:hover{	
+	background-color: #FA2;
+	background-repeat: repeat-x;
+	background-image: -khtml-gradient(linear,left top,left bottom,from(#FFEC46),to(#F09600));
+	background-image: -moz-linear-gradient(#FFEC46,#F09600);
+	background-image: -ms-linear-gradient(#FFEC46,#F09600);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#FFEC46),color-stop(100%,#F09600));
+	background-image: -webkit-linear-gradient(#FFEC46,#F09600);
+	background-image: -o-linear-gradient(#FFEC46,#F09600);
+	background-image: linear-gradient(#FFEC46,#F09600);
+	background-position: 0 0;
+	border-color: #ED9200;
+}
+
+/*
+ * 		ERRORES DE REGISTRO
+ */
+
+#error_explanation{
+	margin: 30px;
+}
+
+#error_explanation ul li {
+	color:#FF0000;
+	list-style-image: url('https://si0.twimg.com/a/1334853862/phoenix/img/error.png');
+}
+
+
+
+

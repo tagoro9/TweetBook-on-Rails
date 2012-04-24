@@ -5,14 +5,12 @@
         <p>Descubre lo que está pasando ahora, con las personas y grupos que te interesan.</p>
       </div>
       <div class="front-signin">
-		<%=form_tag({:action => :login},{:id => 'login'}) do %>			
-		  	<%= text_field_tag(:username, 'Nombre de usuario') %>
-		  	<table class="flex-table password-signin">
-		  		<tr>
-				  	<td class="primary"><%= password_field_tag(:passw,'Contraseña') %></td>
-					<td class="secondary"><%= submit_tag("Entrar", :class => 'btn btn-primary', :id => 'entrar') %></td>
-				</tr>
-			</table>
+		<%=form_for(:session, :url => sessions_path, :html => {:id => :login}) do |f| %>			
+		  	<%= f.text_field(:email, :placeholder => 'Email') %>
+		  	<div class="password-signin">
+			  	<%= f.password_field(:password, :placeholder => 'Contraseña') %>
+			  	<%= f.submit("Entrar", :class => 'btn btn-primary', :id => 'entrar') %>
+		  	</div>
 			<div class="remember">
 		  		<%= check_box_tag(:recordar) %>
 			  	<%= label_tag(:recordar, "Recordar contraseña", :style => 'display:inline') %>
@@ -22,10 +20,12 @@
       <div class="front-signup">
       	<h2>¿Eres nuevo en TweetBook? Regístrate</h2>
 		<%=form_for(@user) do |f| %>
-		  	<%= f.text_field :name %>
-		  	<%= f.text_field :email %>
-		  	<%= f.password_field :password %>
-		  	<%= f.password_field :password_confirmation %>
+			<div class="campos">
+			  	<%= f.text_field :name, :placeholder => "Nombre usuario" %>
+			  	<%= f.text_field :email, :placeholder => "Correo electrónico" %>
+			  	<%= f.password_field :password, :placeholder => "Contraseña" %>
+			  	<%= f.password_field :password_confirmation, :placeholder => "Confirmar" %>
+		  	</div>
 			<%= f.submit("Registrar", :class => 'btn btn-primary', :id => 'registrar') %>
 		<% end %>      	
       </div>

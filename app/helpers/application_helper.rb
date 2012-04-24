@@ -14,4 +14,8 @@ module ApplicationHelper
       render 'layouts/footer'
     end
   end
+  
+  def logo
+    image_tag("logo.png", :alt => "TweetBook", :class => "round")
+   end
 end

@@ -1,24 +1,26 @@
-<h1>Sign up</h1>
-
-<%= form_for(@user) do |f| %>
-	<%= render 'shared/error_messages' %>
-  <div class="field">
-    <%= f.label :name, "Nombre" %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email, "Email" %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password, "Contraseña" %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirmación" %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Registrar" %>
-  </div>
-<% end %>
+<div id="signup-wrapper">
+	<h1>Sign up</h1>
+	
+	<%= form_for(@user) do |f| %>
+		<%= render 'shared/error_messages' %>
+	  <div class="field">
+	    <%= f.label :name, "Nombre" %>
+	    <%= f.text_field :name, :placeholder => "Nombre completo" %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :email, "Email" %>
+	    <%= f.text_field :email, :placeholder => "Correo electrónico" %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :password, "Contraseña" %>
+	    <%= f.password_field :password, :placeholder => "Contraseña" %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :password_confirmation, "Confirmación" %>
+	    <%= f.password_field :password_confirmation, :placeholder => "Confirmación" %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit "Registrar" %>
+	  </div>
+	<% end %>
+</div>
