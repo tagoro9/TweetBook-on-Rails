@@ -7,6 +7,10 @@ module ApplicationHelper
     end
   end
   
+  def bodyClass
+    return "login" if @title == "Inicio"
+  end
+  
   def footer
     if @title == "Inicio"
       render 'layouts/login_footer'
