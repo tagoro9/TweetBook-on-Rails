@@ -11,7 +11,7 @@ body {
 /*Parte Izquierda*/
 
 .front-card .front-welcome {
-    background: url("http://a0.twimg.com/a/1334333797/t1/img/front_page/city-balcony.jpg") no-repeat scroll left top #000000;
+    background: url("http://lorempixel.com/520/380/people/") no-repeat scroll left top #000000;
     border: 0 none;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 125px rgba(255, 255, 255, 0.35);
     display: block;
