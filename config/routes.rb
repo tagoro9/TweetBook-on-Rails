@@ -3,7 +3,8 @@ TweetBookOnRails::Application.routes.draw do
   get "sessions/new"
 
   resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :sessions,   :only => [:new, :create, :destroy]
+  resources :microposts, :only => [:create, :destroy]
   
   root :to => 'pages#login'
   match '/signup', :to => 'users#new' 
