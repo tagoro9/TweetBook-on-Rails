@@ -69,7 +69,7 @@ describe "Users" do
           fill_in "user_email",        :with => "pepe@gmail.com"
           fill_in "user_password",     :with => "123"
           fill_in "user_password_confirmation", :with => "12331"
-          click_button
+          click_button "user_submit"
           response.should render_template('users/new')
           response.should have_selector("div#error_explanation")
           response.should have_selector('form', :id => 'new_user') do |form|
@@ -102,10 +102,10 @@ describe "Users" do
         lambda do
           visit signup_path
           fill_in "user_name",         :with => "Example User"
-          fill_in "user_email",        :with => "user@example.com"
+          fill_in "user_email",        :with => "usera@example.com"
           fill_in "user_password",     :with => "foobar"
           fill_in "user_password_confirmation", :with => "foobar"
-          click_button
+          click_button "user_submit"
           response.should have_selector("div.flash.success",
                                         :content => "Bienvenido a TweetBook")
           response.should render_template('users/show')
