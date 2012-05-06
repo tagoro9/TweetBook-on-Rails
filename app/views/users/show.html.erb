@@ -41,7 +41,7 @@
 			<h1 class="feedTitle">Timeline</h1>
 		      <% if !@user.microposts.empty? %>
 		          <%= render @microposts %>
-		        <%= will_paginate @microposts %>
+		        <%= will_paginate @microposts, :renderer => BootstrapPagination::Rails %>
 	       	  <% else %>
 	       	  	<p>Todavía no <% if current_user?(@user)%> has <% else %> ha <% end %> publicado nada.</p>
 		      <% end %>
