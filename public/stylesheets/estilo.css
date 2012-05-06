@@ -7,6 +7,12 @@ body.login {
 	background-color: #6C009E;
 }
 
+
+/****************************** LAYOUT GENERAL ***********************/
+
+/****************************** FIN LAYOUT GENERAL *******************/
+
+
 /****************************** HEADER *****************************/
 ul.nav li.home {
 	/*background-image:url('../images/icons/home.png'); 
@@ -168,6 +174,23 @@ ul.nav li.home {
 	color: #FFF;	
 }
 
+
+.tweetBookLink:hover {
+	background-color: #6C009E;
+}
+
+.tweetBookLink {
+	background-color: #AC23EB;
+	background-image: -moz-linear-gradient(top, #AC23EB, #6C009E);
+	background-image: -ms-linear-gradient(top, #AC23EB, #6C009E);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#AC23EB), to(#6C009E));
+	background-image: -webkit-linear-gradient(top, #AC23EB, #6C009E);
+	background-image: -o-linear-gradient(top, #AC23EB, #6C009E);
+	background-image: linear-gradient(top, #AC23EB, #6C009E);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#AC23EB', endColorstr='#6C009E', GradientType=0);
+	border-color: #6C009E #6C009E #6C009E;
+}
 
 ::-webkit-input-placeholder {
     color: rgba(108,0,158,0.5);
@@ -400,9 +423,9 @@ ul.nav li.home {
 }
 
 
-/********************** HOME *********************/
+/********************** PROFILE *********************/
 
-#home {
+#profile {
 	padding:15px;
 	padding-left: 45px;
 	padding-top: 30px;
@@ -410,16 +433,46 @@ ul.nav li.home {
 	border-radius: 10px;
 }
 
-#home .post {
-	max-height: 80px;
-	border: 2px solid #000;
-	border-radius: 10px;
+#profile .userInfo {
+	margin-left:0px;
+	margin-top:0px;
+	width:785px;
+}
+
+#profile .userInfo .gravatar {
+	border-radius:5px;
+}
+
+#profile .userInfo .status {
+	padding-left:5px;
+}
+
+#profile .timeLine {
+}
+
+#profile .actions {
+}
+
+#profile .similares {
+	
+}
+
+#profile .similares .smallUser {
+	
+}
+
+#profile .similares .smallUser img {
+	border-radius: 3px;
+}
+
+.post {
 	margin-bottom: 10px;
-	padding: 5px;
 }
 
 .feedTitle {
-	margin-bottom: 30px;
+	padding-bottom:5px;
+	border-bottom: 1px solid #E6E6E6;
+	margin-bottom: 15px;
 }
 
 .post .avatar {
@@ -430,14 +483,134 @@ ul.nav li.home {
 	border-radius:5px;
 }
 
-.post .postContent {
-	width:430px;
-	position:relative;
-	top:-55px;
+.postContent {
+	width:416px;
+	border: 1px solid #E6E6E6;
 	margin-left: 60px;
+	padding-left: 10px;
 }
 
-/********************* FIN HOME ******************/
+.postContent:hover {
+	background-color: #E6E6E6;
+}
 
+.postContent .timeStamp {
+	color: #C0C0C0;
+}
+
+.postFrom .nub{
+	background-image: url("../images/feed/comment-nub.png");
+	background-repeat: no-repeat;
+    content: "";
+    display: block;
+    height: 6px;
+    left:-16px;
+    top:-1px;
+    width:6px;
+    position: relative;
+    vertical-align: top;
+    width: 6px;	
+}
+
+.post:hover .postFrom .nub{
+	background-image: url("../images/feed/comment-nub-hover.png");
+}
+
+.postFrom {
+	font-size: 1.3em;
+}
+
+.postFrom .userName {
+	color: #C0C0C0;
+}
+
+/********************* FIN PROFILE ******************/
+
+/************************ HOME ***********************/
+
+#home {
+	padding:15px;
+	padding-left: 45px;
+	padding-top: 30px;
+	background: rgba(108,0,158,0.5);
+	border-radius: 10px;
+}
+
+#home .userInfo {
+	margin-left:0px;
+	margin-top:0px;
+	width:785px;
+}
+
+#home .userInfo .gravatar {
+	border-radius:5px;
+}
+
+#home .userInfo .userName {
+	padding-bottom:10px;
+	border-bottom: 1px solid #E6E6E6;
+}
+
+#home .statsContainer {
+	margin-top:10px;
+}
+
+#home .statsContainer .stats {
+	list-style: none;
+	margin-left: 0;
+}
+
+#home .statsContainer .stats li {
+	display:inline;
+	padding-right:2px;
+	border-right: 1px solid #000;
+}
+
+#home .statsContainer .stats li:last-child {
+	border:none;
+}
+
+#home .publish .field{
+	margin-left:0px;
+	width: 242px;
+}
+
+#home .publish textarea {
+	height:90px;
+	width:230px;
+}
+
+#home .publish #micropost_submit {
+	margin-left: 172px;
+}
+
+/************************* FIN HOME *****************/
+
+/*************************** LISTADO DE USUARIOS ***************/
+.users {
+	list-style: none;
+}
+
+.users li {
+	padding: 8px 15px;
+	margin: 10px 0;
+}
+
+.users li:nth-child(odd) {
+	background: rgba(50,50,50,0.1);
+}
+ 
+.users li:nth-child(odd):hover {
+	background: rgba(50,50,50,0.3);	
+}
+ 
+.users li:nth-child(even) {
+	background: rgba(50,50,50,0.3);
+}
+ 
+.users li:nth-child(even):hover {
+	background: rgba(50,50,50,0.5);
+}
+/*************************FIN LISTADO DE USUARIOS ***************/
 
 

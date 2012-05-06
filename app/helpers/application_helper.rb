@@ -1,4 +1,5 @@
 module ApplicationHelper
+  
   def header
     if !signed_in?
       render 'layouts/login_header'
@@ -21,5 +22,6 @@ module ApplicationHelper
   
   def logo
     image_tag("logo.png", :alt => "TweetBook", :class => "round")
-   end
+   end 
+   
 end

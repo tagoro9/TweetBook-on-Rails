@@ -1,68 +1,50 @@
-<div id="home" class="span11">
+<div id="profile" class="span11">
+	<div class="userInfo well">
+		<div class="row-fluid">
+			<div class="span2">
+				<%= gravatar_for @user, :size => 128 %>
+			</div>
+			<div class="status span7 offset3">
+				<h1><%= @user.name %></h1>
+			</div>
+			<div class="operations offset8 span2">
+				<p>
+					<% if current_user?(@user)%>
+						<%= link_to "Configuración", edit_user_path(current_user), :class => "btn btn-primary tweetBookLink"%>
+					<% end %>
+				</p>
+	        	<p><%= link_to user_path(@user), @user %></p>
+	        	<p><%= pluralize(@user.microposts.count,"micropost") %></p>
+			</div>
+        </div>	
+	</div>	
 	<div class="row-fluid">
 		<div class="span4">
 			<div class="well">
-				<h1>
-					<%= gravatar_for @user %>
-					<%= @user.name%>
-				</h1>
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active"><a href="#">Cronología</a></li>
+					<li><a href="#">Seguidores</a></li>
+					<li><a href="#">Siguiendo</a></li>
+				</ul>
 			</div>
 			<div class="well">
-				<h1>
-					A quien seguir
-				</h1>
-			</div>
-			<div class="well">
-				<h1>
-					¿Qué está pasando en este momento?
-				</h1>
-			</div>
-		</div>
-		<div class="span7 offset4 well">
-			<h1 class="feedTitle">TIMELINE</h1>
-			<div class="post">
-				<div class="avatar">
-					<img alt="victor" class="gravatar" src="http://gravatar.com/avatar/df385102847dc5b62c12713645299381?size=50">
-				</div>
-				<div class="postContent">
-					<h2 class="postFrom">Alfonso gonzalez&nbsp;<span class="userName">@llosimura</span></h2>
-					<p>@vivictormora somos dos. Ahora fijandome, tengo demasiada musica italiana.</p>
-				</div>
-			</div>
-			<div class="post">
-				<div class="avatar">
-					<img alt="victor" class="gravatar" src="http://gravatar.com/avatar/df385102847dc5b62c12713645299381?size=50">
-				</div>
-				<div class="postContent">
-					<h2 class="postFrom">Alfonso gonzalez&nbsp;<span class="userName">@llosimura</span></h2>
-					<p>@vivictormora somos dos. Ahora fijandome, tengo demasiada musica italiana.</p>
-				</div>
-			</div>
-			<div class="post">
-				<div class="avatar">
-					<img alt="victor" class="gravatar" src="http://gravatar.com/avatar/df385102847dc5b62c12713645299381?size=50">
-				</div>
-				<div class="postContent">
-					<h2 class="postFrom">Alfonso gonzalez&nbsp;<span class="userName">@llosimura</span></h2>
-					<p>@vivictormora somos dos. Ahora fijandome, tengo demasiada musica italiana.</p>
+				<h2>Similares a ti</h2>
+				<div class="similares">
+					<div class="smallUser">
+						<%= gravatar_for @user, :size => 48 %>
+						<span class="name"><%= link_to @user.name, @user %></span>
+					</div>
 				</div>
 			</div>
 		</div>
-		
-      <% unless @user.microposts.empty? %>
-        <table class="microposts" summary="User microposts">
-          <%= render @microposts %>
-        </table>
-        <%= will_paginate @microposts %>
-      <% end %>
-    </td>
-    <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
-      <strong>Microposts</strong> <%= @user.microposts.count %>
-    </td>
-    
+		<div class="timeLine span7 offset4 well">
+			<h1 class="feedTitle">Timeline</h1>
+		      <% if !@user.microposts.empty? %>
+		          <%= render @microposts %>
+		        <%= will_paginate @microposts %>
+	       	  <% else %>
+	       	  	<p>Todavía no <% if current_user?(@user)%> has <% else %> ha <% end %> publicado nada.</p>
+		      <% end %>
+		</div>    
 	</div>
 </div>
-<!--<div id="home">
-</div>-->

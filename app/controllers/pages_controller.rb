@@ -1,17 +1,15 @@
-class PagesController < ApplicationController
-  def login
-    @title = "Inicio"
-    redirect_to current_user unless !signed_in?
-    @user = User.new
-  end  
-  
-#  def home
-#    @title = "Home"
-#    if signed_in?
-#      @micropost = Micropost.new
-#      @feed_items = current_user.feed.paginate(:page => params[:page])
-#    end
-#  end
+class PagesController < ApplicationController  
+  def home
+    if signed_in?
+      @title = current_user.name + " - Home"
+      @micropost = Micropost.new if signed_in?
+      @feed_items = current_user.feed.paginate(:page => params[:page])
+    else
+      @title = "Inicio"
+      @user = User.new
+      render 'pages/login'
+    end
+  end
   
   def signup
     
@@ -30,7 +28,7 @@ class PagesController < ApplicationController
   end
   
   def help
-    @title = "Help"
+    @title = "Ayuda"
   end
   
 end

@@ -9,14 +9,14 @@ class UsersController < ApplicationController
   end
   
   def index
-    @title = "All users"
+    @title = "Usuarios"
     @users = User.paginate(:page => params[:page])
   end
   
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(:page => params[:page])
-    @title = @user.name
+    @title = @user.name + " - Perfil"
   end
   
   def create
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
   
   def edit 
-    @title = "Edit User"
+    @title = "Configurar"
   end
   
   def update

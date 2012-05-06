@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  before_filter :authenticate, :only => [:create, :destroy]
+  before_filter :authenticate, :only => [:create, :destroy, :destroy]
   before_filter :authorized_user, :only => :destroy
   
   def create
@@ -15,7 +15,7 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost.destroy
-    redirect_back_or root_path
+    redirect_back_or @micropost.user
   end
 
   private

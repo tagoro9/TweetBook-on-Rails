@@ -1,0 +1,40 @@
+<div id="home" class="span11">	
+	<div class="row-fluid">
+		<div class="span4">
+			<div class="well">
+				<div class="userInfo row-fluid">
+					<div class="userAvatar span1">
+						<%= gravatar_for current_user, :size => 48%>
+					</div>
+					<div class="userName span3 offset1">
+						<%= current_user.name %><br/>
+						<small class="more">Ver mi página de perfil</small>
+					</div>
+				</div>
+				<div class="statsContainer">
+					<ul class="stats">
+						<li><strong>53</strong> tweets</li>
+						<li><strong>23</strong> siguiendo</li>
+						<li><strong>56</strong> seguidores</li>
+					</ul>
+				</div>
+				<div class="publish">
+					<%= render 'shared/micropost_form' %>
+				</div>
+			</div>
+			<div class="well">
+				<h2>Similares a ti</h2>
+				<div class="similares">
+					<div class="smallUser">
+						<%= gravatar_for current_user, :size => 48 %>
+						<span class="name"><%= link_to current_user.name, current_user %></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="timeLine span7 offset4 well">
+			<h1 class="feedTitle">Timeline</h1>
+	       	  	<%= render 'shared/feed'%>
+		</div>    
+	</div>
+</div>

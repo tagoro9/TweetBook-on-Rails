@@ -1,15 +1,20 @@
-<tr>
-  <td class="micropost">
-    <span class="content"><%= micropost.content %></span>
-    <span class="timestamp">
-      Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-    </span>
-  </td>
-  <% if current_user?(micropost.user) %>
-    <td>
-      <%= link_to "delete", micropost, :method => :delete,
-                                       :confirm => "¿Está seguro?",
-                                       :title => micropost.content %>
-    </td>
-  <% end %>
-</tr>
+<div class="post">
+	<div class="row-fluid">
+		<div class="span1 avatar">
+			<%= gravatar_for micropost.user, :size => 50 %>
+		</div>
+		<div class="postContent">
+			<h2 class="postFrom"><span class="nub"></span><%= micropost.user.name%>&nbsp;<span class="userName">@llosimura</span></h2>
+			<p><%= micropost.content %></p>
+			<p class="more">
+				<% if current_user?(micropost.user) %>
+					<span class="operations">
+						      <%= link_to "Borrar", micropost, :method => :delete,
+                                       						   :confirm => "¿Está seguro?",
+                                       						   :title => micropost.content %>
+					</span>&nbsp;-&nbsp;
+				<% end%>
+				<span class="time"><%= time_ago_in_words(micropost.created_at) %> ago.</span></p>
+		</div>
+	</div>
+</div>
