@@ -34,7 +34,7 @@ describe UsersController do
 
       it "should have the right title" do
         get :index
-        response.should have_selector("title", :content => "All users")
+        response.should have_selector("title", :content => "Usuarios")
       end
 
       it "should have an element for each user" do
@@ -47,7 +47,7 @@ describe UsersController do
       it "should paginate users" do
         get :index
         response.should have_selector("div.pagination")
-        response.should have_selector("span.disabled", :content => "Previous")
+        response.should have_selector("li.disabled", :content => "Previous")
         response.should have_selector("a", :href => "/users?page=2",
                                            :content => "2")
         response.should have_selector("a", :href => "/users?page=2",
@@ -84,7 +84,7 @@ describe UsersController do
 
     it "should have a profile image" do
       get :show, :id => @user
-      response.should have_selector("h1>img", :class => "gravatar")
+      response.should have_selector("div .userInfo img", :class => "gravatar")
     end
   end
 
@@ -170,7 +170,7 @@ describe UsersController do
 
     it "should have the right title" do
       get :edit, :id => @user
-      response.should have_selector("title", :content => "Edit User")
+      response.should have_selector("title", :content => "Configurar")
     end
 
     it "should have a link to change the Gravatar" do
