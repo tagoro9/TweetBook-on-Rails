@@ -5,7 +5,7 @@
 		</div>
 		<div class="postContent">
 			<h2 class="postFrom"><span class="nub"></span><%= micropost.user.name%>&nbsp;<span class="userName">@llosimura</span></h2>
-			<p><%= micropost.content %></p>
+			<p class="content"><%= micropost.content %></p>
 			<p class="more">
 				<% if current_user?(micropost.user) %>
 					<span class="operations">
