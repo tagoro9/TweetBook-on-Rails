@@ -3,6 +3,7 @@
 		<div class="row-fluid">
 			<div class="span2">
 				<%= gravatar_for @user, :size => 128 %>
+				<%= render 'follow_form' if signed_in? %>
 			</div>
 			<div class="status span7 offset3">
 				<h1><%= @user.name %></h1>
