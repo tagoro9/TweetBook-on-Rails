@@ -21,7 +21,7 @@ describe PagesController do
 
       it "should have the right title" do
         response.should have_selector("title",
-                                      :content => "#{@base_title} | Home")
+                                      :content => "#{@base_title} | Inicio")
       end
     end
 
@@ -42,14 +42,14 @@ describe PagesController do
       end
     end
   end
-
+=begin
   describe "GET 'users'" do
     it "should be successful" do
       get 'users'
       response.should be_success
     end
   end
-
+=end
 
 =begin
   describe "GET 'profile'" do
