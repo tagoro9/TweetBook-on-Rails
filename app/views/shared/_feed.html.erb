@@ -1,6 +1,7 @@
 <% if !@feed_items.empty? %>
-    <%= render :partial => 'shared/feed_item', :collection => @feed_items, :renderer => BootstrapPagination::Rails %>
+    <%= render :partial => 'shared/feed_item', :collection => @feed_items %>
   <%= will_paginate @feed_items %>
 <% else%>
+    <%= render :partial => 'shared/feed_item', :collection => @feed_items %>
 	<p>Comienza a seguir a gente para que tu Timeline se llene</p>
 <% end %>
