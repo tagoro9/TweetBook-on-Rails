@@ -3,7 +3,7 @@ require 'roodi'
 require 'roodi_task'
 require 'metric_fu'
 
-
+=begin
   MetricFu::Configuration.run do |config|  
     config.metrics = [:reek, :roodi, :flog, :flay, :rcov, :stats, :rails_best_practices, :churn, :saikuro]
     config.graphs = [:reek, :roodi, :flog, :flay, :rcov, :stats, :rails_best_practices, :churn, :saikuro]
@@ -41,6 +41,6 @@ task :flay do
   
   raise "#{flay.masses.size} trozos de codigo tienen una masa de duplicado > #{threshold}" unless flay.masses.empty? 
 end
-
+=end
 
 #RoodiTark.new 'roodi', ['app/**/*.rb', 'lib/**/*.rb']
