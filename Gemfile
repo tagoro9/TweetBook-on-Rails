@@ -18,6 +18,7 @@ gem 'googlecharts'
 gem 'topfunky-gruff'
 gem 'rmagick', '2.13.1' 
 gem 'magic_encoding'
+gem 'hoe', '~> 1.5.1'
 gem 'jscruggs-metric_fu'
 
 group :development do
