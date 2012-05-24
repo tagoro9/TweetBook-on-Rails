@@ -7,7 +7,7 @@
 					<li class="<%= "active" if @title =~ /Home/ %>"><%= link_to "Home", root_path %></li>
 					<% if signed_in? %>
 						<li class="<%= "active" if @title == 'Usuarios'%>"><%= link_to "Usuarios", users_path %></li>
-						<li class="<%= "active" if @title =~ /Perfil/%>"><%= link_to "Perfil", current_user %></li>
+						<li class="<%= "active" if @title =~ /Perfil|Following|Followers|Configurar/%>"><%= link_to "Perfil", current_user %></li>
 					<% end %>
 					<li class="<%= "active" if @title == 'Ayuda'%>"><%= link_to "Ayuda", help_path %></li>		
 					<% if signed_in? %>

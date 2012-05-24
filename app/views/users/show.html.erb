@@ -23,9 +23,9 @@
 		<div class="span4">
 			<div class="well">
 				<ul class="nav nav-pills nav-stacked">
-					<li class="active"><a href="#">Cronología</a></li>
-					<li><a href="#">Seguidores</a></li>
-					<li><a href="#">Siguiendo</a></li>
+					<li <%='class=active' if @title =~ /Perfil/%>><%= link_to "Cronología", current_user %></li>
+					<li <%='class=active' if @title =~ /Followers/%>><a href="<%= followers_user_path(@user) %>">Seguidores</a></li>
+					<li <%='class=active' if @title =~ /Following/%>><a href="<%= following_user_path(@user) %>">Siguiendo</a></li>
 				</ul>
 			</div>
 			<div class="well">
@@ -39,13 +39,18 @@
 			</div>
 		</div>
 		<div class="timeLine span7 offset4 well">
-			<h1 class="feedTitle">Timeline</h1>
+			<h1 class="feedTitle"><%=@title%></h1>
+			<% if @title =~ /Perfil/%>
 		      <% if !@user.microposts.empty? %>
 		          <%= render @microposts %>
 		        <%= will_paginate @microposts, :renderer => BootstrapPagination::Rails %>
 	       	  <% else %>
 	       	  	<p>Todavía no <% if current_user?(@user)%> has <% else %> ha <% end %> publicado nada.</p>
 		      <% end %>
+	      	<%else%>
+      		  <%=render 'show_follow'%>
+	      	<% end %>
 		</div>    
+		<%=render 'shared/delete_tweet'%>
 	</div>
 </div>

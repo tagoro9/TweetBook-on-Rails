@@ -4,6 +4,7 @@
     <%= f.text_area :content, :placeholder => "Publicar algo..." %>
   </div>
   <div class="actions">
-    <%= f.submit "Publicar", :class => 'btn btn-primary tweetBookButton' %>
+  	<span id="charactersLeft">140</span>
+    <%= f.submit "Publicar", :class => 'btn btn-primary tweetBookButton', :disabled => "disabled" %>
   </div>
 <% end %>

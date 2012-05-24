@@ -4,14 +4,19 @@
 			<%= gravatar_for feed_item.user, :size => 50 %>
 		</div>
 		<div class="postContent">
-			<h2 class="postFrom"><span class="nub"></span><%= feed_item.user.name%>&nbsp;<span class="userName">@llosimura</span></h2>
+			<h2 class="postFrom"><span class="nub"></span><%= link_to feed_item.user.name, feed_item.user%>&nbsp;<span class="userName">@llosimura</span></h2>
 			<p class="content"><%= wrap(feed_item.content) %></p>
 			<p class="more">
 				<% if current_user?(feed_item.user) %>
 					<span class="operations">
-						      <%= link_to "Borrar", feed_item, :method => :delete,
-                                       						   :confirm => "¿Está seguro?",
+							<i class="icon-trash"></i>
+						      <%= link_to "Borrar", '#delete-confirm',
+                                       						   :class => 'delete-confirm',
+                                       						   "data-id" => feed_item.id,
                                        						   :title => feed_item.content %>
+							  <!--<%= link_to "Borrar", feed_item, :method => :delete,
+                                       						   :confirm => "¿Está seguro?",
+                                       						   :title => feed_item.content %>-->                                       						   
 					</span>&nbsp;-&nbsp;
 				<% end%>
 				<span class="time"><%= time_ago_in_words(feed_item.created_at) %> ago.</span></p>

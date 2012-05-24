@@ -11,15 +11,7 @@
 						<small class="more">Ver mi página de perfil</small>
 					</div>
 				</div>
-				<div class="statsContainer">
-					<ul class="stats">
-						<li><strong>53</strong> tweets</li>
-						<li><strong>23</strong> siguiendo</li>
-						<li><strong>56</strong> seguidores</li>
-					</ul>
-					<%= render 'shared/stats'%>
-					<span id="charactersLeft">140</span>
-				</div>
+				<%= render 'shared/stats'%>
 				<div class="publish">
 					<%= render 'shared/micropost_form' %>
 				</div>
@@ -37,6 +29,7 @@
 		<div class="timeLine span7 offset4 well">
 			<h1 class="feedTitle">Timeline</h1>
 	       	  	<%= render 'shared/feed'%>
-		</div>    
+		</div>  
+		<%=render 'shared/delete_tweet' %>
 	</div>
 </div>

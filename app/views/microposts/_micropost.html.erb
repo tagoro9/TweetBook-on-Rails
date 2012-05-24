@@ -9,9 +9,14 @@
 			<p class="more">
 				<% if current_user?(micropost.user) %>
 					<span class="operations">
-						      <%= link_to "Borrar", micropost, :method => :delete,
+							<i class="icon-trash"></i>
+						      <%= link_to "Borrar", '#delete-confirm',
+                                       						   :class => 'delete-confirm',
+                                       						   "data-id" => micropost.id,
+                                       						   :title => micropost.content %>							
+						      <!--<%= link_to "Borrar", micropost, :method => :delete,
                                        						   :confirm => "¿Está seguro?",
-                                       						   :title => micropost.content %>
+                                       						   :title => micropost.content %>-->
 					</span>&nbsp;-&nbsp;
 				<% end%>
 				<span class="time"><%= time_ago_in_words(micropost.created_at) %> ago.</span></p>

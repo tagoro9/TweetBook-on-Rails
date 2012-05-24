@@ -1,6 +1,7 @@
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
+	background-color: #6C009E;
 }
 
 body.login {
@@ -10,6 +11,54 @@ body.login {
 
 /****************************** LAYOUT GENERAL ***********************/
 
+.gravatar {
+	border-radius:5px;
+}
+
+.well {
+	border: none;
+}
+
+a {
+	color: #6C009E;
+}
+a:hover {
+	text-decoration: underline;
+	color: #6C009E;
+}
+
+.userInfo {
+	margin-left:0px;
+	margin-top:0px;
+	width:785px;
+}
+
+.userInfo .userName {
+	padding-bottom:10px;
+	border-bottom: 1px solid #E6E6E6;
+}
+
+.similares {
+	
+}
+
+.similares .smallUser {
+	
+}
+
+h1.title {
+	padding-bottom:5px;	
+}
+
+span.desc {
+	display:block;
+	padding-bottom:10px;
+	border-bottom: 1px solid #E6E6E6;	
+}
+
+.nav-pills .active a, .nav-pills .active a:hover {
+	background-color: #6C009E;
+}
 /****************************** FIN LAYOUT GENERAL *******************/
 
 
@@ -426,10 +475,11 @@ ul.nav li.home {
 /********************** PROFILE *********************/
 
 #profile {
-	padding:15px;
-	padding-left: 45px;
-	padding-top: 30px;
-	background: rgba(108,0,158,0.5);
+	padding:0px 15px 15px 45px;
+	/*padding-left: 45px;*/
+	/*padding-top: 30px;*/
+	/*background: rgba(108,0,158,0.5);*/
+	/*background: url("../images/mainBack.png") repeat scroll 0 0 transparent;*/
 	border-radius: 10px;
 }
 
@@ -451,18 +501,6 @@ ul.nav li.home {
 }
 
 #profile .actions {
-}
-
-#profile .similares {
-	
-}
-
-#profile .similares .smallUser {
-	
-}
-
-#profile .similares .smallUser img {
-	border-radius: 3px;
 }
 
 .post {
@@ -491,7 +529,8 @@ ul.nav li.home {
 }
 
 .postContent:hover {
-	background-color: #E6E6E6;
+	/*background-color: #E6E6E6;*/
+	background:#EABF09;	
 }
 
 .postContent .timeStamp {
@@ -521,7 +560,13 @@ ul.nav li.home {
 }
 
 .postFrom .userName {
-	color: #C0C0C0;
+	color: #D2D2D2;
+	font-size: 12px;
+}
+
+.flash {
+	padding-left:65px;
+	padding-right:50px;
 }
 
 /********************* FIN PROFILE ******************/
@@ -529,26 +574,12 @@ ul.nav li.home {
 /************************ HOME ***********************/
 
 #home {
-	padding:15px;
-	padding-left: 45px;
-	padding-top: 30px;
-	background: rgba(108,0,158,0.5);
+	padding:0px 15px 15px 45px;
+	/*padding-left: 45px;*/
+	/*padding-top: 30px;*/
+	/*background: rgba(108,0,158,0.5);*/
+	/*background: url("../images/mainBack.png") repeat scroll 0 0 transparent;*/
 	border-radius: 10px;
-}
-
-#home .userInfo {
-	margin-left:0px;
-	margin-top:0px;
-	width:785px;
-}
-
-#home .userInfo .gravatar {
-	border-radius:5px;
-}
-
-#home .userInfo .userName {
-	padding-bottom:10px;
-	border-bottom: 1px solid #E6E6E6;
 }
 
 #home .statsContainer {
@@ -566,6 +597,10 @@ ul.nav li.home {
 	border-right: 1px solid #000;
 }
 
+#home .statsContainer .stats li a{
+	padding-left:5px;
+}
+
 #home .statsContainer .stats li:last-child {
 	border:none;
 }
@@ -576,15 +611,63 @@ ul.nav li.home {
 }
 
 #home .publish textarea {
-	height:90px;
 	width:230px;
+	max-width:230px;
+	min-width:230px;
+	height: 20px;
+	min-height:20px;
+	max-height:20px;
+	/*height:90px;*/
+	/*width:230px;*/
+}
+
+#home .actions {
+	float:right;
+	display:none;
 }
 
 #home .publish #micropost_submit {
-	margin-left: 172px;
+	/*margin-left: 172px;*/
 }
 
 /************************* FIN HOME *****************/
+
+/********************* EDITAR PERFIL ****************/
+
+#editProfile {
+	padding:0px 15px 15px 45px;
+	border-radius: 10px;
+}
+
+form.edit_user {
+	margin-top:20px;
+}
+
+form.edit_user .field input{
+	width:220px;
+	height:20px;
+	margin-left: 30px;
+}
+
+form.edit_user .field label {
+	float:none;
+	margin:5px;
+	line-height:20px;
+	min-width:100px;
+	display:inline-block;
+}
+
+form.edit_user .actions #user_submit {
+	width:100px;
+	margin-left:242px;
+	height:30px;
+}
+
+
+
+/********************* FIN EDITAR PERFIL ************/
+
+
 
 /*************************** LISTADO DE USUARIOS ***************/
 .users {
