@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class UsersController < ApplicationController
   before_filter :authenticate, :except => [:show, :new, :create]
   before_filter :correct_user, :only => [:edit, :update]

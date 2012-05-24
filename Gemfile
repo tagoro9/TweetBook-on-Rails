@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+source 'http://gems.github.com'
 
 gem 'rails', '3.0.11'
 
@@ -8,6 +9,16 @@ gem 'rails', '3.0.11'
 gem 'sqlite3'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'jquery-rails'
+gem 'flog','2.2.0'
+gem 'flay'
+gem 'roodi'
+gem 'reek'
+gem 'test-construct'
+gem 'googlecharts'
+gem 'topfunky-gruff'
+gem 'rmagick', '2.13.1' 
+gem 'magic_encoding'
+gem 'jscruggs-metric_fu'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

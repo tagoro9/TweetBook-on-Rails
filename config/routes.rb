@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 TweetBookOnRails::Application.routes.draw do
   
   get "sessions/new"
