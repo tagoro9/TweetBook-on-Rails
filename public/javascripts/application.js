@@ -44,9 +44,20 @@ $(document).ready(function(){
 	$('a.delete-confirm').click(function(e) {
 	  e.preventDefault();
 	  $('#delete-confirm').data('id', $(this).data('id')).modal('show');
-	  //$('#delete-confirm').modal('show');
 	});	
 	
+	//Reply to modal
+	$('#reply').on('show', function() {
+		data = $(this).data('data')
+		$(this).find('h3').html($(this).find('h3').html()+data['name'])
+		$(this).find('textarea').attr('value',data['name'])
+		$(this).find('.modal-footer').html(data['content'])
+	});
+	
+	$('a.reply').click(function(e) {
+	  e.preventDefault();
+	  $('#reply').data('data',{name: $(this).data('name'),content: $(this).data('content') }).modal('show');
+	});		
 })
 
 

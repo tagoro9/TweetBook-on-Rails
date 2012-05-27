@@ -7,18 +7,22 @@
 			<h2 class="postFrom"><span class="nub"></span><%= micropost.user.name%>&nbsp;<span class="userName">@llosimura</span></h2>
 			<p class="content"><%= wrap(micropost.content) %></p>
 			<p class="more">
-				<% if current_user?(micropost.user) %>
-					<span class="operations">
+				<span class="operations">
+					<% if current_user?(micropost.user) %>
+
 							<i class="icon-trash"></i>
-						      <%= link_to "Borrar", '#delete-confirm',
-                                       						   :class => 'delete-confirm',
-                                       						   "data-id" => micropost.id,
-                                       						   :title => micropost.content %>							
+				   		   <%= link_to "Borrar", '#delete-confirm',
+                       						   :class => 'delete-confirm',
+                       						   "data-id" => micropost.id,
+            	       						   :title => micropost.content %>	
+				   <% else %>
+					  	 	<i class="icon-repeat"></i>
+   						   							
 						      <!--<%= link_to "Borrar", micropost, :method => :delete,
                                        						   :confirm => "¿Está seguro?",
                                        						   :title => micropost.content %>-->
-					</span>&nbsp;-&nbsp;
-				<% end%>
+					<% end%>
+				</span>&nbsp;-&nbsp;
 				<span class="time"><%= time_ago_in_words(micropost.created_at) %> ago.</span></p>
 		</div>
 	</div>

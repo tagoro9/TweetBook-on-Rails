@@ -59,6 +59,14 @@ span.desc {
 .nav-pills .active a, .nav-pills .active a:hover {
 	background-color: #6C009E;
 }
+
+.nav-pills li > a:hover {
+	background-color: #EABF09;
+}
+
+.dropdown-menu li > a:hover {
+	background-color: #6C009E;
+}
 /****************************** FIN LAYOUT GENERAL *******************/
 
 
@@ -696,4 +704,30 @@ form.edit_user .actions #user_submit {
 }
 /*************************FIN LISTADO DE USUARIOS ***************/
 
+/************************* REPLY MODAL ************************/
+#reply {
+	width:500px;
+}
+#modalPostContent {
+	margin:5px;
+}
+
+#modalPostContent textarea {
+	width:96%;
+	max-width:96%;
+	min-width:96%;
+	min-height:60px;
+	max-height:60px;
+	
+}
+
+#reply .modal-body {
+	padding-bottom:0;
+}
+
+#reply .modalActions {
+	float:right;
+	margin:0 14px;
+}
+/*********************** FIN REPLY MODAL **********************/
 

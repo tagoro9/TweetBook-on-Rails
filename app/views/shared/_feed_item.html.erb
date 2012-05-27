@@ -7,13 +7,20 @@
 			<h2 class="postFrom"><span class="nub"></span><%= link_to feed_item.user.name, feed_item.user%>&nbsp;<span class="userName">@llosimura</span></h2>
 			<p class="content"><%= wrap(feed_item.content) %></p>
 			<p class="more">
-				<% if current_user?(feed_item.user) %>
-					<span class="operations">
-							<i class="icon-trash"></i>
-						      <%= link_to "Borrar", '#delete-confirm',
-                                       						   :class => 'delete-confirm',
-                                       						   "data-id" => feed_item.id,
-                                       						   :title => feed_item.content %>
+				<span class="operations">
+					<% if current_user?(feed_item.user) %>
+						<i class="icon-trash"></i>
+					      <%= link_to "Borrar", '',
+	                   						   :class => 'delete-confirm',
+                       						   "data-id" => feed_item.id,
+                       						   :title => feed_item.content %>
+				   <%else%>
+						<i class="icon-repeat"></i>	
+						<%=link_to "Responder", '',
+												:class => 'reply',
+												"data-name" => feed_item.user.name,
+												"data-content" => feed_item.content,
+												:title => feed_item.user.name %>			   
 							  <!--<%= link_to "Borrar", feed_item, :method => :delete,
                                        						   :confirm => "¿Está seguro?",
                                        						   :title => feed_item.content %>-->                                       						   
