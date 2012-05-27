@@ -6,6 +6,8 @@ $(document).ready(function(){
 	//Activar scripts sobre dropdowns
 	$('.dropdown-toggle').dropdown()
 	
+	$('.publish #micropost_submit').attr('disabled','disabled')
+	
 	//Contador de caracteres al escribir un tweet (140 maximo)
 	$("#postContent > #micropost_content").on("keyup", function(){
 		valor = 140 - $(this).val().length

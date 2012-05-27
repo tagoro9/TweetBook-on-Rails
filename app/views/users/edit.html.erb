@@ -43,6 +43,8 @@
 			    	<%= f.label :password_confirmation, "Confirmation" %>
 			    	<%= f.password_field :password_confirmation %>
 			  	</div>
+		  	  	<%= gravatar_for @user %>
+  				<a href="http://gravatar.com/emails">change</a>
 			  	<div class="actions">
 			    	<%= f.submit "Update" %>
 			  	</div>

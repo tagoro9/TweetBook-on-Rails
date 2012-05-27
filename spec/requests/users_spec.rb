@@ -50,7 +50,7 @@ describe "Users" do
           fill_in "user_password",     :with => "foobar"
           fill_in "user_password_confirmation", :with => "foobar"
           click_button "Registrar"
-          response.should have_selector("div.flash.success",
+          response.should have_selector("div.alert-success",
                                         :content => "Bienvenido a TweetBook")
           response.should render_template('users/show')
         end.should change(User, :count).by(1)
@@ -107,7 +107,7 @@ describe "Users" do
           fill_in "user_password",     :with => "foobar"
           fill_in "user_password_confirmation", :with => "foobar"
           click_button "user_submit"
-          response.should have_selector("div.flash.success",
+          response.should have_selector("div.alert-success",
                                         :content => "Bienvenido a TweetBook")
           response.should render_template('users/show')
         end.should change(User, :count).by(1)
@@ -123,7 +123,7 @@ describe "Users" do
         fill_in :email,    :with => ""
         fill_in :password, :with => ""
         click_button
-        response.should have_selector("div.flash.error", :content => "incorrecto")
+        response.should have_selector("div.alert-error", :content => "incorrecto")
       end
     end
 
