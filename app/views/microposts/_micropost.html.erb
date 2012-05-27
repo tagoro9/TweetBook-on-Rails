@@ -17,10 +17,11 @@
             	       						   :title => micropost.content %>	
 				   <% else %>
 					  	 	<i class="icon-repeat"></i>
-   						   							
-						      <!--<%= link_to "Borrar", micropost, :method => :delete,
-                                       						   :confirm => "¿Está seguro?",
-                                       						   :title => micropost.content %>-->
+							<%=link_to "Responder", '',
+												:class => 'reply',
+												"data-name" => micropost.user.name,
+												"data-content" => micropost.content,
+												:title => micropost.user.name %>	
 					<% end%>
 				</span>&nbsp;-&nbsp;
 				<span class="time"><%= time_ago_in_words(micropost.created_at) %> ago.</span></p>

@@ -1,0 +1,8 @@
+  <% if !@user.microposts.empty? %>
+  	<% content =  render(@microposts) %>
+  	<% content += will_paginate(@microposts, :renderer => BootstrapPagination::Rails)%>
+  	$(".timeLine").html("<%=escape_javascript(content)%>")
+  <% else %>
+  	$(".timeLine").html('<p>Todavía no <% if current_user?(@user)%> has <% else %> ha <% end %> publicado nada.</p>')
+  <% end %>
+$(".timeLine").prepend('<h1 class="feedTitle"><%=@title%></h1>')

@@ -20,10 +20,7 @@
 												:class => 'reply',
 												"data-name" => feed_item.user.name,
 												"data-content" => feed_item.content,
-												:title => feed_item.user.name %>			   
-							  <!--<%= link_to "Borrar", feed_item, :method => :delete,
-                                       						   :confirm => "¿Está seguro?",
-                                       						   :title => feed_item.content %>-->                                       						   
+												:title => feed_item.user.name %>			                                       						   
 					</span>&nbsp;-&nbsp;
 				<% end%>
 				<span class="time"><%= time_ago_in_words(feed_item.created_at) %> ago.</span></p>

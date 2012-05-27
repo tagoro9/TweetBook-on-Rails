@@ -17,7 +17,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(:page => params[:page])
+    @micropost = Micropost.new if signed_in?
     @title = @user.name + " - Perfil"
+    respond_to do |format|
+      format.html
+      format.js   
+    end   
   end
   
   def create
@@ -57,17 +62,25 @@ class UsersController < ApplicationController
   def following
     @title = "Following"
     @user = User.find(params[:id])
+    @micropost = Micropost.new if signed_in?
     @users = @user.following.paginate(:page => params[:page])
     #render 'show_follow'
-    render 'show'
+    respond_to do |format|
+      format.html { render 'show' }
+      format.js
+    end    
   end
 
   def followers
     @title = "Followers"
     @user = User.find(params[:id])
+    @micropost = Micropost.new if signed_in?
     @users = @user.followers.paginate(:page => params[:page])
     #render 'show_follow'
-    render 'show'
+    respond_to do |format|
+      format.html { render 'show' }
+      format.js
+    end   
   end
   
   private

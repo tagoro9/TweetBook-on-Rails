@@ -1,31 +1,36 @@
-<div id="profile" class="span11">
+<div id="profile" class="span11 mainContainer">
 	<div class="userInfo well">
 		<div class="row-fluid">
 			<div class="span2">
 				<%= gravatar_for @user, :size => 128 %>
-				<%= render 'follow_form' if signed_in? %>
 			</div>
 			<div class="status span7 offset3">
 				<h1><%= @user.name %></h1>
+				<p class="userName">@VivictorMora</p>
+				<p class="bio">I just love my mind.</p>
 			</div>
 			<div class="operations offset8 span2">
 				<p>
 					<% if current_user?(@user)%>
 						<%= link_to "Configuración", edit_user_path(current_user), :class => "btn btn-primary tweetBookLink"%>
-					<% end %>
+					<% else %>
+						<%= render 'follow_form' if signed_in? %>
+					<% end%>
 				</p>
-	        	<p><%= link_to user_path(@user), @user %></p>
+	        	<!--<p><%= link_to user_path(@user), @user %></p>-->
 	        	<p><%= pluralize(@user.microposts.count,"micropost") %></p>
+	        	<p><%=@user.followers.count%> seguidores</p>
+	        	<p><%=@user.following.count%> siguiendo</p>
 			</div>
         </div>	
 	</div>	
 	<div class="row-fluid">
-		<div class="span4">
+		<div class="leftBar span4">
 			<div class="well">
 				<ul class="nav nav-pills nav-stacked">
-					<li <%='class=active' if @title =~ /Perfil/%>><%= link_to "Cronología", current_user %></li>
-					<li <%='class=active' if @title =~ /Followers/%>><a href="<%= followers_user_path(@user) %>">Seguidores</a></li>
-					<li <%='class=active' if @title =~ /Following/%>><a href="<%= following_user_path(@user) %>">Siguiendo</a></li>
+					<li <%='class=active' if @title =~ /Perfil/%>><%= link_to "Cronología", @user, :remote => "true" %></li>
+					<li <%='class=active' if @title =~ /Followers/%>><a href="<%= followers_user_path(@user) %>" data-remote="true">Seguidores</a></li>
+					<li <%='class=active' if @title =~ /Following/%>><a href="<%= following_user_path(@user) %>" data-remote="true">Siguiendo</a></li>
 				</ul>
 			</div>
 			<div class="well">
@@ -52,5 +57,6 @@
 	      	<% end %>
 		</div>    
 		<%=render 'shared/delete_tweet'%>
+		<%=render 'shared/reply_tweet'%>
 	</div>
 </div>

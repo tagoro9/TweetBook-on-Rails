@@ -1,9 +1,19 @@
-<h1>All users</h1>
-
-<%= will_paginate :renderer => BootstrapPagination::Rails %>
-
-	<ul class="users">
-		<%= render @users %>
-	</ul>
-
-<%= will_paginate :renderer => BootstrapPagination::Rails %>
+<div id="users" class="span11 mainContainer">
+	<div class="row-fluid">
+		<div class="leftBar span4">
+			<div class="well">
+				lalalaallaalalalal
+			</div>
+			<div class="well">
+				lalalalalaala
+			</div>
+		</div>
+		<div class="timeLine span7 offset4 well">
+			<h1 class="feedTitle">Usuarios</h1>
+			<ul class="users">
+				<%= render @users %>
+			</ul>
+			<%= will_paginate :renderer => BootstrapPagination::Rails %>
+		</div>
+	</div>
+</div>

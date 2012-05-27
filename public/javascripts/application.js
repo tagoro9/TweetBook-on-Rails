@@ -7,10 +7,10 @@ $(document).ready(function(){
 	$('.dropdown-toggle').dropdown()
 	
 	//Contador de caracteres al escribir un tweet (140 maximo)
-	$("#micropost_content").on("keyup", function(){
-		valor = 140 - $("#micropost_content").val().length
+	$("#postContent > #micropost_content").on("keyup", function(){
+		valor = 140 - $(this).val().length
 		$("#charactersLeft").html(valor)
-		if (($("#micropost_content").val().length) > 140) {
+		if (($(this).val().length) > 140) {
 			$("#micropost_submit").attr('disabled','disabled')
 			
 		}
@@ -20,7 +20,7 @@ $(document).ready(function(){
 	})
 	
 	//Cambiar tamaño de textarea de micropost al escribir
-	$('#micropost_content').focus(function(){
+	$('#postContent > #micropost_content').focus(function(){
 		$(this).css('height','90px')
 		$(this).css('min-height','90px')
 		$('.actions').show();
@@ -41,7 +41,7 @@ $(document).ready(function(){
 	  $submit.attr('href', href.replace('id', $(this).data('id')));
 	});
 	
-	$('a.delete-confirm').click(function(e) {
+	$('body').on('click','a.delete-confirm',function(e) {
 	  e.preventDefault();
 	  $('#delete-confirm').data('id', $(this).data('id')).modal('show');
 	});	
@@ -54,10 +54,21 @@ $(document).ready(function(){
 		$(this).find('.modal-footer').html(data['content'])
 	});
 	
-	$('a.reply').click(function(e) {
+	$('body').on('click','a.reply',function(e) {
 	  e.preventDefault();
 	  $('#reply').data('data',{name: $(this).data('name'),content: $(this).data('content') }).modal('show');
 	});		
+	
+	//Pills por ajax
+	$('.nav-pills a').click(function(e){
+		if ($(this).parent().hasClass("active")) {
+			e.preventDefault();
+		}
+		else {
+			$(this).parent().addClass("active")
+			$(this).parent().siblings(".active").removeClass("active")
+		}
+	})
 })
 
 

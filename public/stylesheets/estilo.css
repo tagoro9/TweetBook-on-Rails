@@ -38,6 +38,30 @@ a:hover {
 	border-bottom: 1px solid #E6E6E6;
 }
 
+.userInfo p.userName {
+	padding:1px;
+	font-size: 15px;
+	border:none;
+	margin:0;
+}
+
+.userInfo .bio {
+}
+
+.userInfo .gravatar {
+	border-radius:5px;
+}
+
+.userInfo .status {
+	padding-left:5px;
+}
+
+.userInfo .operations {
+	margin-left:60px;
+	text-align:right;
+}
+
+
 .similares {
 	
 }
@@ -66,6 +90,35 @@ span.desc {
 
 .dropdown-menu li > a:hover {
 	background-color: #6C009E;
+}
+
+.mainContainer {
+	padding:0px 15px 15px 45px;
+	border-radius: 10px;	
+}
+
+/* Estadisticas*/
+.statsContainer {
+	margin-top:10px;
+}
+
+.statsContainer .stats {
+	list-style: none;
+	margin-left: 0;
+}
+
+.statsContainer .stats li {
+	display:inline;
+	padding-right:2px;
+	border-right: 1px solid #000;
+}
+
+.statsContainer .stats li a{
+	padding-left:5px;
+}
+
+.statsContainer .stats li:last-child {
+	border:none;
 }
 /****************************** FIN LAYOUT GENERAL *******************/
 
@@ -480,36 +533,7 @@ ul.nav li.home {
 }
 
 
-/********************** PROFILE *********************/
-
-#profile {
-	padding:0px 15px 15px 45px;
-	/*padding-left: 45px;*/
-	/*padding-top: 30px;*/
-	/*background: rgba(108,0,158,0.5);*/
-	/*background: url("../images/mainBack.png") repeat scroll 0 0 transparent;*/
-	border-radius: 10px;
-}
-
-#profile .userInfo {
-	margin-left:0px;
-	margin-top:0px;
-	width:785px;
-}
-
-#profile .userInfo .gravatar {
-	border-radius:5px;
-}
-
-#profile .userInfo .status {
-	padding-left:5px;
-}
-
-#profile .timeLine {
-}
-
-#profile .actions {
-}
+/********************** MICROPOST *********************/
 
 .post {
 	margin-bottom: 10px;
@@ -577,41 +601,9 @@ ul.nav li.home {
 	padding-right:50px;
 }
 
-/********************* FIN PROFILE ******************/
+/********************* FIN MICROPOST ******************/
 
 /************************ HOME ***********************/
-
-#home {
-	padding:0px 15px 15px 45px;
-	/*padding-left: 45px;*/
-	/*padding-top: 30px;*/
-	/*background: rgba(108,0,158,0.5);*/
-	/*background: url("../images/mainBack.png") repeat scroll 0 0 transparent;*/
-	border-radius: 10px;
-}
-
-#home .statsContainer {
-	margin-top:10px;
-}
-
-#home .statsContainer .stats {
-	list-style: none;
-	margin-left: 0;
-}
-
-#home .statsContainer .stats li {
-	display:inline;
-	padding-right:2px;
-	border-right: 1px solid #000;
-}
-
-#home .statsContainer .stats li a{
-	padding-left:5px;
-}
-
-#home .statsContainer .stats li:last-child {
-	border:none;
-}
 
 #home .publish .field{
 	margin-left:0px;
@@ -642,11 +634,6 @@ ul.nav li.home {
 
 /********************* EDITAR PERFIL ****************/
 
-#editProfile {
-	padding:0px 15px 15px 45px;
-	border-radius: 10px;
-}
-
 form.edit_user {
 	margin-top:20px;
 }
@@ -670,8 +657,6 @@ form.edit_user .actions #user_submit {
 	margin-left:242px;
 	height:30px;
 }
-
-
 
 /********************* FIN EDITAR PERFIL ************/
 
