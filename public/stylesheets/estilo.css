@@ -583,6 +583,14 @@ ul.nav li.home {
     width: 6px;	
 }
 
+.post.active .postContent {
+	background:#EABF09;	
+}
+
+.post.active .postFrom .nub {
+	background-image: url("../images/feed/comment-nub-hover.png");	
+}
+
 .post:hover .postFrom .nub{
 	background-image: url("../images/feed/comment-nub-hover.png");
 }
@@ -599,6 +607,11 @@ ul.nav li.home {
 .flash {
 	padding-left:65px;
 	padding-right:50px;
+}
+
+.postContent .video {
+	text-align:center;
+	margin:20px;
 }
 
 /********************* FIN MICROPOST ******************/
@@ -710,7 +723,7 @@ form.edit_user .actions #user_submit {
 	padding-bottom:0;
 }
 
-#reply .modalActions {
+#reply .modalActions, #newTweet .modalActions {
 	float:right;
 	margin:0 14px;
 }

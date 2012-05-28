@@ -1,6 +1,13 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
+function scrollTo(element) {
+	$('html,body').scrollTop($(element).offset().top -200)
+     /*$('html, body').animate({
+         scrollTop: $(element).offset().top -200
+     }, 500);	*/
+}
+
 $(document).ready(function(){
 	
 	//Activar scripts sobre dropdowns
@@ -12,7 +19,7 @@ $(document).ready(function(){
 	$("#postContent > #micropost_content").on("keyup", function(){
 		valor = 140 - $(this).val().length
 		$("#charactersLeft").html(valor)
-		if (($(this).val().length) > 140) {
+		if (($(this).val().length) > 140 || $(this).val().length == 0) {
 			$("#micropost_submit").attr('disabled','disabled')
 			
 		}
@@ -28,8 +35,8 @@ $(document).ready(function(){
 		$('.actions').show();
 	})
 	
-	$('#micropost_content').blur(function(){
-		if($(this).val().length == 0) {
+	$('#postContent > #micropost_content').blur(function(){
+		if(($(this).val().length == 0) && (1)) {
 			$(this).css('height','20px')
 			$(this).css('min-height','20px')
 			$('.actions').hide();			
@@ -61,6 +68,11 @@ $(document).ready(function(){
 	  $('#reply').data('data',{name: $(this).data('name'),content: $(this).data('content') }).modal('show');
 	});		
 	
+	//Modal para escribir nuevo tweet (al pulsar n)
+	$(document).bind('keydown','n',function(){
+		$('#newTweet').modal('show')
+	})
+	
 	//Pills por ajax
 	$('.nav-pills a').click(function(e){
 		if ($(this).parent().hasClass("active")) {
@@ -71,6 +83,93 @@ $(document).ready(function(){
 			$(this).parent().siblings(".active").removeClass("active")
 		}
 	})
+	
+	//Navegacion entre los tweets
+	$(document).bind('keydown','j',function(){
+		activo = $('.post.active')
+		//No hay ningun tweet activo
+		if (activo['length'] == 0) {
+			$('.post:first').addClass('active')
+			scrollTo($('.post:first'))
+		}
+		else {
+			siguiente = $(activo).next('.post')
+			$(activo).removeClass('active')
+			//Si es el ultimo ir a la siguiente pagina
+			if (siguiente['length'] == 0) {
+				href = $('a[rel="next"]').first().attr('href')
+				if (href != undefined) {
+					window.location.href = href
+				}
+				else {
+					$(activo).addClass('active')
+				}
+			}
+			else {
+				$(activo).next('.post').addClass('active')
+				scrollTo($(activo).next('.post'))
+			}
+		}
+	})
+	
+	$(document).bind('keydown','k',function(){
+		activo = $('.post.active')
+		//No hay ningun tweet activo
+		if (activo['length'] == 0) {
+			href = $('a[rel~="prev"]').last().attr('href')
+			if (href != undefined) {
+				window.location.href = href
+			}
+		}
+		else {
+			anterior = $(activo).prev('.post')
+			$(activo).removeClass('active')
+			//Si es el primero ir a la pagina anterior
+			if (anterior['length'] == 0) {
+				href = $('a[rel~="prev"]').last().attr('href')
+				if (href != undefined) {
+					window.location.href = href
+				}
+				else {
+					$(activo).addClass('active')
+				}
+			}
+			else {
+				$(activo).prev('.post').addClass('active')
+				scrollTo($(activo).prev('.post'))
+			}
+		}
+	})	
+	
+	//Expandir videos
+	$('a.videoTweet').bind('click',function(e){
+		e.preventDefault()
+		if ($(this).is('.active')) {
+			$(this).removeClass('active')
+			$(this).html("Ver vídeo")
+			video = $(this).parent().parent().next('.video')
+			$(video).css('visibility','hidden')
+			$(video).hide(150)
+		}
+		else {
+			$(this).addClass('active')
+			$(this).html("Ocultar vídeo")	
+			hueco = $(this).parent().parent()
+			video = $(hueco).next('.video')
+			if (video['length'] == 0) {
+				//Crear vidro
+				video = $('<div>').addClass("video").html('<iframe width="380" height="285" src="http://www.youtube.com/embed/tzunjg9RuKQ" frameborder="0" allowfullscreen></iframe>')
+				$(this).parent().parent().after(video);
+			}
+			else {
+				//Mostrar video
+				$(video).show()
+				$(video).css('visibility','visible')
+				
+			}
+		}
+	})	
+	
 })
 
 

@@ -8,6 +8,11 @@
 			<p class="content"><%= wrap(feed_item.content) %></p>
 			<p class="more">
 				<span class="operations">
+					<i class="icon-play-circle"></i>
+					<%= link_to "Ver vídeo",'',
+											:class => 'videoTweet',
+											"data-url" => "http://www.youtube.com/watch?v=tzunjg9RuKQ",
+											:title => "VideoTweet"%>
 					<% if current_user?(feed_item.user) %>
 						<i class="icon-trash"></i>
 					      <%= link_to "Borrar", '',
