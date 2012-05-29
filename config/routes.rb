@@ -17,6 +17,7 @@ TweetBookOnRails::Application.routes.draw do
   match '/signin', :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   match '/faq', :to => 'pages#faq'
+  match '/profile', :to => 'users#show'
   match '/cuenta', :to => 'pages#cuenta'
   match '/help', :to => 'pages#help'
   match 'about', :to => 'pages#about'

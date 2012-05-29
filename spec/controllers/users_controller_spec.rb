@@ -10,7 +10,7 @@ describe UsersController do
       it "should deny access" do
         get :index
         response.should redirect_to(signin_path)
-        flash[:notice].should =~ /sign in/i
+        flash[:notice].should =~ /inicia sesi/i
       end
     end
 
@@ -59,41 +59,60 @@ describe UsersController do
   
   describe "GET 'show'" do
 
-    before(:each) do
-      @user = Factory(:user)
+    describe "for non-signed-in users" do
+      it "should deny access" do
+        get :show
+        response.should redirect_to(signin_path)
+        flash[:notice].should =~ /inicia sesi/i
+      end
     end
 
-    it "should be successful" do
-      get :show, :id => @user
-      response.should be_success
-    end
+    describe "for signed-in users" do
 
-    it "should find the right user" do
-      get :show, :id => @user
-      assigns(:user).should == @user
-    end
-    
-    it "should have the right title" do
-      get :show, :id => @user
-      response.should have_selector("title", :content => @user.name)
-    end
+      before(:each) do
+        @user = test_sign_in(Factory(:user))
+        second = Factory(:user, :name => "Bob", :email => "another@example.com")
+        third  = Factory(:user, :name => "Ben", :email => "another@example.net")
 
-    it "should include the user's name" do
-      get :show, :id => @user
-      response.should have_selector("h1", :content => @user.name)
-    end
-
-    it "should have a profile image" do
-      get :show, :id => @user
-      response.should have_selector("div .userInfo img", :class => "gravatar")
-    end
-    
-    it "should show the user's microposts" do
-      mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
-      mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
-      get :show, :id => @user
-      response.should have_selector("p.content", :content => mp1.content)
-      response.should have_selector("p.content", :content => mp2.content)
+        @users = [@user, second, third]
+        30.times do
+          @users << Factory(:user, :name => Factory.next(:name),
+                                   :email => Factory.next(:email))
+        end
+      end
+  
+      it "should be successful" do
+        get :show, :id => @user
+        response.should be_success
+      end
+  
+      it "should find the right user" do
+        get :show, :id => @user
+        assigns(:user).should == @user
+      end
+      
+      it "should have the right title" do
+        get :show, :id => @user
+        response.should have_selector("title", :content => @user.name)
+      end
+  
+      it "should include the user's name" do
+        get :show, :id => @user
+        response.should have_selector("h1", :content => @user.name)
+      end
+  
+      it "should have a profile image" do
+        get :show, :id => @user
+        response.should have_selector("div .userInfo img", :class => "gravatar")
+      end
+      
+      it "should show the user's microposts" do
+        mp1 = Factory(:micropost, :user => @user, :content => "Foo bar")
+        mp2 = Factory(:micropost, :user => @user, :content => "Baz quux")
+        get :show, :id => @user
+        response.should have_selector("p.content", :content => mp1.content)
+        response.should have_selector("p.content", :content => mp2.content)
+      end
     end
   end
 

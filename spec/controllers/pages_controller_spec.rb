@@ -43,23 +43,7 @@ describe PagesController do
       end
     end
   end
-=begin
-  describe "GET 'users'" do
-    it "should be successful" do
-      get 'users'
-      response.should be_success
-    end
-  end
-=end
 
-=begin
-  describe "GET 'profile'" do
-    it "should be successful" do
-      get 'profile'
-      response.should be_success
-    end
-  end
-=end
 
   describe "GET 'faq'" do
     it "should be successful" do

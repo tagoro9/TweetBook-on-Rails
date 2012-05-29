@@ -32,16 +32,6 @@ describe "LinksDePaginas" do
     response.should have_selector('title', :content => "FAQ")
   end
 
-=begin
-    describe "when not signed in" do
-    it "should have a signin link" do
-      visit root_path
-      response.should have_selector("a", :href => signin_path,
-                                         :content => "Sign in")
-    end
-  end
-=end
-
   describe "when signed in" do
 
     before(:each) do
@@ -60,8 +50,19 @@ describe "LinksDePaginas" do
 
     it "should have a profile link" do
       visit root_path
-      response.should have_selector("a", :href => user_path(@user),
+      response.should have_selector("a", :href => profile_path,
                                          :content => "Perfil")
     end
+    
+    it "should be able to access the profile page" do
+      visit profile_path
+      response.should have_selector "title",:content => @user.name
+    end
+    
+    it "should be able to access the users list" do
+      visit users_path
+      response.should have_selector "title",:content => "Usuarios"
+    end
+    
   end
 end

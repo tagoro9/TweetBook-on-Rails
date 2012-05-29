@@ -33,7 +33,7 @@ module SessionsHelper
 
   def deny_access
     store_location
-    redirect_to signin_path, :notice => "Please sign in to access this page."
+    redirect_to signin_path, :notice => "Por favor inicia sesión para acceder a esta página"
   end
 
   def redirect_back_or(default)
