@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="<%= root_path %>">TweetBook On Rails</a>
-          <% if @title != 'Inicio'%>
+          <% if !/Inicio|Sign\sin/.match @title%>
 			<%=form_for(:session, :url => sessions_path, :html => {:id => 'loginArriba',:class => 'navbar-form pull-right'}) do |f| %>			
 			  		<%= f.text_field(:email, :placeholder => 'Email') %>
 				  	<%= f.password_field(:password, :placeholder => 'Contraseña') %>

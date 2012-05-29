@@ -384,7 +384,7 @@ ul.nav li.home {
 
 /******************** FIN LOGIN ****************/
 
-/**************** FOOTER *******************/ 
+/**************** FOOTER LOGIN *******************/ 
 
 .inline-list {
     margin-left: 0;
@@ -431,7 +431,24 @@ ul.nav li.home {
 }
 
 
-/******************* FIN FOOTER ****************/
+/******************* FIN FOOTER LOGIN ****************/
+
+/****************** FOOTER ***********************/
+
+#footer {
+	text-align:center;
+}
+
+#footer ul {
+	list-style-type: none;
+}
+
+#footer ul li {
+	display:inline;
+	margin-right:5px;
+}
+
+/****************** FIN FOOTER ******************/
 
 /******************* DEBUG PARAMS ***************/
 
@@ -701,6 +718,29 @@ form.edit_user .actions #user_submit {
 	background: rgba(50,50,50,0.5);
 }
 /*************************FIN LISTADO DE USUARIOS ***************/
+
+/************************ SIGNIN ******************************/
+#signin .signinForm {
+	border:none;
+}
+
+.signinForm .form {
+	
+}
+
+.signinForm .field {
+	margin: 5px 0px;	
+}
+
+.signinForm .actions {
+}
+
+.signinForm .form h1 {
+	font-size: 25px;
+	margin-bottom:15px;
+}
+/************************ FIN SIGNIN **************************/
+
 
 /************************* REPLY MODAL ************************/
 #reply {
