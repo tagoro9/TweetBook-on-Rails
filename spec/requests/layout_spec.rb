@@ -46,6 +46,35 @@ describe "PresenciaDePaginas" do
     end
   end
   
+  describe 'It should have a footer' do
+    
+    before(:each) do
+      visit root_path
+    end    
+    
+    describe 'when not signed in' do
+        it "should contain a list of links" do
+          response.should have_selector("div",:class => "footer inline-list") do |content|
+            content.should have_selector("ul")
+          end
+        end
+    end
+    
+    describe 'when signed in' do
+      before(:each) do
+        @user = Factory(:user)
+        fill_in :session_email,    :with => @user.email
+        fill_in :session_password, :with => @user.password
+        click_button  
+      end
+      it "should contain a list of links" do
+        response.should have_selector("div",:id => "footer") do |content|
+          content.should have_selector("ul")
+        end
+      end
+    end
+  end
+  
   describe "GET /faq" do
     it "Deberia tener una pagina de preguntas frecuentes" do
       get '/faq'

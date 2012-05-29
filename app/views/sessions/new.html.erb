@@ -5,11 +5,9 @@
 				<h1>Inicia sesión en TweetBook</h1>
 				<%= form_for(:session, :url => sessions_path) do |f| %>
 					<div class="field">
-						<!--<%= f.label :email, "Email" %><br />-->
 						<%= f.text_field :email, :placeholder => "Email" %>
 					</div>
 					<div class="field">
-						<!--<%= f.label :password, "Contraseña" %><br />-->
 						<%= f.password_field :password, :placeholder => "Contraseña" %>
 					</div>
 					<div class="actions">
