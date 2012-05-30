@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+  		<title>TweetBook ?</title>
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="/stylesheets/bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="/stylesheets/estilo.css" media="screen" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+	    <div class="navbar navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container">
+	          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></a>
+	          <a class="brand" href="<%= root_path%>">TweetBook On Rails</a>          
+	        </div>
+	      </div>
+	    </div>		
+		<div id="is404" class="mainContainer">
+			<div class="row-fluid">
+				<div class="span11">
+					<h1>Lo sentimos, ¡esa página no existe!</h1>
+					<h2>(pero te seguimos queriendo)</h2>
+					<img src="images/404_<%= Random.new.rand(1..4) %>.jpg" alt="404"/>
+					<!--<img src="images/404_2.jpg" alt="404"/>
+					<img src="images/404_4.jpg" alt="404"/>
+					<img src="images/404_3.jpg" alt="404"/>-->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <style type="text/css">
+    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
+    div.dialog {
+      width: 25em;
+      padding: 0 4em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right-color: #999;
+      border-bottom-color: #999;
+    }
+    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+  </style>
+</head>
+
+<body>-->
+  <!-- This file lives in public/404.html -->
+  <!--<div class="dialog">
+    <h1>The page you were looking for doesn't exist.</h1>
+    <p>You may have mistyped the address or the page may have moved.</p>
+  </div>
+</body>
+</html>
+-->
