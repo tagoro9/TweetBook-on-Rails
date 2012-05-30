@@ -14,7 +14,7 @@ module ApplicationHelper
   end
   
   def footer
-    if @title == "Inicio"
+    if @title =~ /Inicio/
       render 'layouts/login_footer'
     else
       render 'layouts/footer'
