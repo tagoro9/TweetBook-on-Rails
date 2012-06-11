@@ -18,6 +18,7 @@ gem 'test-construct'
 #gem 'topfunky-gruff'
 gem 'rmagick', '2.13.1' 
 gem 'magic_encoding'
+gem 'paperclip'
 gem 'jscruggs-metric_fu'
 
 group :development do
