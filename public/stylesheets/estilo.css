@@ -237,18 +237,23 @@ ul.nav li.home {
 /* Login & Signup Forms layout */
 
 .front-signin {
-    height: 108px;
+    height: 88px;
     left: 536px;
     position: absolute;
     top: 0;
     width: 300px;
 }
 .front-signup {
-    height: 250px;
+    height: 270px;
     left: 536px;
     position: absolute;
-    top: 121px;
+    top: 101px;
     width: 300px;
+}
+
+#user_password_confirmation{
+	height: 18px;
+    width: 190px;
 }
 
 .front-welcome, .front-signin, .front-signup {
@@ -385,9 +390,13 @@ ul.nav li.home {
 }
 
 #registrar {
+	color:#FFF;
+	margin-left:0px;
+	padding:4px;
 	float:right;
 	margin-right:15px;
 	height:30px;
+	width:60px;
 }
 
 /******************** FIN LOGIN ****************/
