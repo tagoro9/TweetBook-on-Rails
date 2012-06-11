@@ -11,10 +11,6 @@
 			  	<%= f.password_field(:password, :placeholder => 'Contraseña') %>
 			  	<%= f.submit("Entrar", :class => 'btn btn-primary tweetBookButton', :id => 'entrar') %>
 		  	</div>
-			<div class="remember">
-		  		<%= check_box_tag(:recordar) %>
-			  	<%= label_tag(:recordar, "Recordar contraseña", :style => 'display:inline') %>
-		  	</div>
 		<% end %>      	
       </div>
       <div class="front-signup">
@@ -26,9 +22,10 @@
 			  	<%= f.text_field :identity, :placeholder => "Nombre usuario" %>
 			  	<%= f.password_field :password, :placeholder => "Contraseña" %>
 			  	<%= f.password_field :password_confirmation, :placeholder => "Confirmar" %>
+				<%= f.submit("Registrar", :class => 'btn btn-primary tweetBookButton', :id => 'registrar') %>
+		
 		  	</div>
-			<%= f.submit("Registrar", :class => 'btn btn-primary tweetBookButton', :id => 'registrar') %>
-		<% end %>      	
+		 <% end %>      	
       </div>
     </div>
   </div>
