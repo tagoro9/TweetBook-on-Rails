@@ -5,4 +5,10 @@ module UsersHelper
                                             :class => 'gravatar',
                                             :gravatar => options)
   end
+  
+  def link_to_identity(identity)
+    path = User.find_by_identity(identity) || root_path
+    link_to "@#{identity}",path
+  end
+  
 end

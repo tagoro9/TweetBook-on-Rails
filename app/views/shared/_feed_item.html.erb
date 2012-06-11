@@ -8,7 +8,7 @@
 			<h2 class="postFrom"><span class="nub"></span><%= link_to feed_item.user.name, feed_item.user%>&nbsp;<span class="userName">@<%=feed_item.user.identity%></span></h2>
 			<p class="content">
 			<% text = any_url((feed_item.content))%>
-			<%=sanitize text[0], :tags => %w(a), :attributes => %w(href)%>
+			<%=sanitize wrap_mentions(text[0]), :tags => %w(a), :attributes => %w(href)%>
 			<!--<%= raw wrap(text[0])%>-->				
 			</p>
 			<p class="more">

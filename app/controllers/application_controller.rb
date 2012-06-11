@@ -1,12 +1,11 @@
 # -*- encoding : utf-8 -*-
 
 =begin
- TODO campo descripcion en el usuario
  TODO pagina usuarios quitar lalalalalala
- TODO bordes redondeados en imagenes de microposts
  TODO estilos al mostrar los usuarios
  TODO arreglar contador al responder
  TODO Hacer readme en github
+ TODO Editar usuario sin cambiar contraseña
  TODO corregir field_with_errors css al registrarse de forma incorrecta
  TODO arreglar seguidores y siguiendo en el perfil, se salta de linea
  TODO evitar XSS en video e imagenes del feed
@@ -27,7 +26,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   
   #unless Rails.application.config.consider_all_requests_local
-    rescue_from Exception, with: :render_500
+    #rescue_from Exception, with: :render_500
     rescue_from ActionController::RoutingError, with: :render_404
     rescue_from ActionController::UnknownController, with: :render_404
     rescue_from ActionController::UnknownAction, with: :render_404
