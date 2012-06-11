@@ -28,7 +28,11 @@ describe 'Errors control' do
   end
   
   describe 'error500' do
-    
+    it 'should render error 500 pages when a server error occurs' do
+      get 'errores/raise500' #lanza un error 500
+      response.should have_selector "title", :content => 'Ups!'
+      response.should have_selector "h1", :content => "no estamos"
+    end
   end
   
 end
