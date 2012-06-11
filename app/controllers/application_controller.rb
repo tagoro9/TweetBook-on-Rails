@@ -3,16 +3,13 @@
 =begin
  TODO pagina usuarios quitar lalalalalala
  TODO estilos al mostrar los usuarios
+ TODO al borrar un tweet si es desde el home, redirigirlo al home
+ TODO poner logo en la pagina de inicio de sesion
  TODO arreglar contador al responder
  TODO Hacer readme en github
  TODO Editar usuario sin cambiar contraseña
  TODO corregir field_with_errors css al registrarse de forma incorrecta
- TODO arreglar seguidores y siguiendo en el perfil, se salta de linea
- TODO evitar XSS en video e imagenes del feed
- TODO replicar codigo imagenes y videos al perfil
  TODO Modal con atajos de teclado
- TODO mostrar identity en todas partes
- TODO detectar menciones (@identity)
  TODO action mailer
  TODO pusher
  TODO rmagick e imagenes de perfil

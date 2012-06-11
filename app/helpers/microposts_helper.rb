@@ -11,7 +11,7 @@ module MicropostsHelper
     url = content.scan(/(?:http:\/\/)?www\.\w+.\S+/)
     url.each do |a|
       http = a.sub(/http:\/\//,"")
-      link = "<a href=\"http:\/\/#{http}\"> #{http} </a>"
+      link = "<a href=\"http:\/\/#{http}\"> #{wrap_long_string(http)} </a>"
       content.sub!(a,link)    
       (params[:video]  = "http:\/\/"+http) if (http.match(/www.youtube.com/)) != nil
       (params[:imagen] = "http:\/\/"+http) if (http.match(/\www\.\w+.\S+.jpe?g/)) != nil
@@ -23,7 +23,7 @@ module MicropostsHelper
     content = text.clone
     mentions = content.scan(/(?:^|\s)@(\w*[a-zA-Z_]+\w*)/).flatten.uniq
     mentions.each do |a|
-      content.sub!("@#{a}",link_to_identity(a))
+      content.gsub!("@#{a}",link_to_identity(a))
     end
     content
   end

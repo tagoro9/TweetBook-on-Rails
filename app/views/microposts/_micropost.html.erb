@@ -5,9 +5,27 @@
 		</div>
 		<div class="postContent">
 			<h2 class="postFrom"><span class="nub"></span><%= micropost.user.name%>&nbsp;<span class="userName">@<%=micropost.user.identity%></span></h2>
-			<p class="content"><%= wrap(micropost.content) %></p>
+			<p class="content">
+				<% text = any_url((micropost.content))%>
+				<%=sanitize wrap_mentions(text[0]), :tags => %w(a), :attributes => %w(href)%>
+				<!--<%= wrap(micropost.content) %>-->
+			</p>
 			<p class="more">
-				<span class="operations">
+				<span class="operations">	
+					<% if ((text[1][:video]) != nil)%>
+						<i class="icon-play-circle"></i>
+						<%= link_to "Ver vídeo",'',
+												:class => 'videoTweet',
+												"data-url" =>raw(text[1][:video]) ,
+												:title => "VideoTweet"%>
+					<%end%>
+					<% if ((text[1][:imagen]) != nil)%>
+						<i class="icon-picture"></i>
+						<%= link_to "Ver imagen", '',
+												  :class => 'imageTweet',
+												  "data-url" => raw(text[1][:imagen]),
+												  :title => "ImageTweet"%>
+					<% end %>									
 					<% if current_user?(micropost.user) %>
 
 							<i class="icon-trash"></i>
@@ -20,7 +38,9 @@
 							<%=link_to "Responder", '',
 												:class => 'reply',
 												"data-name" => micropost.user.name,
+												"data-identity" => micropost.user.identity,
 												"data-content" => micropost.content,
+												"data-image" => "/images/NoImage.png",
 												:title => micropost.user.name %>	
 					<% end%>
 				</span>&nbsp;-&nbsp;
