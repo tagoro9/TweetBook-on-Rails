@@ -1,4 +1,20 @@
 # -*- encoding : utf-8 -*-
+
+=begin
+ TODO campo descripcion en el usuario
+ TODO evitar XSS en video e imagenes del feed
+ TODO replicar codigo imagenes y videos al perfil
+ TODO Modal con atajos de teclado
+ TODO mostrar identity en todas partes
+ TODO detectar menciones (@identity)
+ TODO action mailer
+ TODO pusher
+ TODO rmagick e imagenes de perfil
+ TODO Hacer memoria
+ TODO Hacer presentacion
+  
+=end
+
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
