@@ -12,7 +12,9 @@
 		<%if (k < array.size) %>
 			<div class="smallUser">
 				<%= gravatar_for current_user, :size => :thumb %>
-				<span class="name"><%= link_to (User.find_by_email(array[rand(array.size)])).name, array[k] %></span>
+				num = rand(array.size)
+				<span class="name"><%= link_to (User.find_by_email(array[num])).name, array[k] %></span>
+				array - array[num]
 			</div>
 		<%end%>
 	<% end %>
