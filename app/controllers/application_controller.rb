@@ -1,10 +1,8 @@
 # -*- encoding : utf-8 -*-
 
 =begin
- TODO pagina usuarios quitar lalalalalala
  TODO estilos al mostrar los usuarios
  TODO al borrar un tweet si es desde el home, redirigirlo al home
- TODO arreglar contador al responder
  TODO Hacer readme en github
  TODO terminar lo de similares a ti
  TODO Editar usuario sin cambiar contraseña

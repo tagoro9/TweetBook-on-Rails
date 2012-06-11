@@ -34,13 +34,7 @@
 				</ul>
 			</div>
 			<div class="well">
-				<h2>Similares a ti</h2>
-				<div class="similares">
-					<div class="smallUser">
-						<%= gravatar_for @user, :size => :thumb %>
-						<span class="name"><%= link_to @user.name, @user %></span>
-					</div>
-				</div>
+				<%= render "shared/similares"%>
 			</div>
 		</div>
 		<div class="timeLine span7 offset4 well">

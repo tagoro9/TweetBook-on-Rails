@@ -1,0 +1,7 @@
+<h2>Similares a ti</h2>
+<div class="similares">
+	<div class="smallUser">
+		<%= gravatar_for current_user, :size => :thumb %>
+		<span class="name"><%= link_to current_user.followers.name, current_user %></span>
+	</div>
+</div>
