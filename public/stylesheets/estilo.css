@@ -129,6 +129,14 @@ ul.nav li.home {
 	width:70px;
 	text-align:right;*/
 }
+
+#brandImg {
+    display: block;
+    float: left;
+    margin-left: -20px;
+    margin-right: 5px;
+    margin-top: 7px;
+}
 /***************************** FIN HEADER *************************/
 
 /***************************** LOGIN HEADER *************************/
