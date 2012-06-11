@@ -21,8 +21,9 @@
       	<h2>¿Eres nuevo en TweetBook? Regístrate</h2>
 		<%=form_for(@user) do |f| %>
 			<div class="campos">
-			  	<%= f.text_field :name, :placeholder => "Nombre usuario" %>
+			  	<%= f.text_field :name, :placeholder => "Nombre" %>
 			  	<%= f.text_field :email, :placeholder => "Correo electrónico" %>
+			  	<%= f.text_field :identity, :placeholder => "Nombre usuario" %>
 			  	<%= f.password_field :password, :placeholder => "Contraseña" %>
 			  	<%= f.password_field :password_confirmation, :placeholder => "Confirmar" %>
 		  	</div>
