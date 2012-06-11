@@ -2,13 +2,13 @@
 module MicropostsHelper
 
   def wrap(content)
-    sanitize(raw(content.split.map{ |s| wrap_long_string(s) }.join(' ')))
+    raw(content.split.map{ |s| wrap_long_string(s) }.join(' '))
   end
   
   def any_url (text)
     content = text.clone
     params = Hash.new
-    url = content.scan(/(?:http:\/\/)?\www\.\w+.\S+/)
+    url = content.scan(/(?:http:\/\/)?www\.\w+.\S+/)
     url.each do |a|
       http = a.sub(/http:\/\//,"")
       link = "<a href=\"http:\/\/#{http}\"> #{http} </a>"

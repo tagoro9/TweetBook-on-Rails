@@ -169,6 +169,14 @@ $(document).ready(function(){
 		}
 	})
 	
+	function youtube_parser(url){
+		alert(JSON.stringify(url))
+		video = /([0-9a-zA-Z]+)/.exec(url)
+		alert(JSON.stringify(video))
+		//return /((?:[\w\d\-\_\=]+&amp;(?:amp;)?)*v(?:&lt;[A-Z]+&gt;)?=([0-9a-zA-Z\-\_]+))/i.exec(url)[2];
+	}
+
+	
 	//Expandir videos
 	$('a.videoTweet').bind('click',function(e){
 		e.preventDefault()
@@ -183,11 +191,11 @@ $(document).ready(function(){
 			$(this).addClass('active')
 			$(this).html("Ocultar vídeo")	
 			url = $(this).data('url')
-			videoUrl = /[\?\&]v=([^\?\&]+)/.exec(url);
+			urlVideo = youtube_parser(url)
 			hueco = $(this).parent().parent()
 			video = $(hueco).next('.video')
 			if (video['length'] == 0) {
-				//Crear vidro
+				//Crear video
 				video = $('<div>').addClass("video").html('<iframe width="380" height="285" src="http://www.youtube.com/embed/'+videoUrl[1]+'" frameborder="0" allowfullscreen></iframe>')
 				$(this).parent().parent().after(video);
 			}

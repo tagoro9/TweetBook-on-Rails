@@ -8,7 +8,8 @@
 			<h2 class="postFrom"><span class="nub"></span><%= link_to feed_item.user.name, feed_item.user%>&nbsp;<span class="userName">@llosimura</span></h2>
 			<p class="content">
 			<% text = any_url(wrap(feed_item.content))%>
-			<%=raw text[0]%>				
+			<!--<%=sanitize text[0], :tags => %w(a), :attributes => %w(href)%>-->
+			<%= raw text[0]%>				
 			</p>
 			<p class="more">
 				<span class="operations">
@@ -16,14 +17,14 @@
 						<i class="icon-play-circle"></i>
 						<%= link_to "Ver vídeo",'',
 												:class => 'videoTweet',
-												"data-url" => text[1][:video] ,
+												"data-url" =>raw(text[1][:video]) ,
 												:title => "VideoTweet"%>
 					<%end%>
 					<% if ((text[1][:imagen]) != nil)%>
 						<i class="icon-picture"></i>
 						<%= link_to "Ver imagen", '',
 												  :class => 'imageTweet',
-												  "data-url" => text[1][:imagen],
+												  "data-url" => raw(text[1][:imagen]),
 												  :title => "ImageTweet"%>
 					<% end %>
 					<% if current_user?(feed_item.user) %>
