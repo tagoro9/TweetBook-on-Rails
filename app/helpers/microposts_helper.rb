@@ -29,6 +29,10 @@ module MicropostsHelper
     content
   end
 
+  def find_mentions text
+    text.scan(/(?:^|\s)@(\w*[a-zA-Z_]+\w*)/).flatten.uniq
+  end
+
   private
   
     def wrap_long_string(text, max_width = 30)

@@ -12,4 +12,10 @@ class UserMailer < ActionMailer::Base
     mail(:to => user.email, :subject => "@#{follower.identity} te sigue en TweetBook")
   end
   
+  def mention_email(user,mentioner)
+    @user = user
+    @mentioner = mentioner
+    mail(:to => user.email, :subject => "@#{mentioner.identity} te ha mencionado en TweetBook")
+  end
+  
 end
