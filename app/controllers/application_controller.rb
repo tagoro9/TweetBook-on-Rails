@@ -6,6 +6,7 @@
  TODO bordes redondeados en imagenes de microposts
  TODO estilos al mostrar los usuarios
  TODO arreglar contador al responder
+ TODO Hacer readme en github
  TODO corregir field_with_errors css al registrarse de forma incorrecta
  TODO arreglar seguidores y siguiendo en el perfil, se salta de linea
  TODO evitar XSS en video e imagenes del feed
