@@ -11,6 +11,7 @@ module MicropostsHelper
     url = content.scan(/(?:http:\/\/)?www\.\w+.\S+/)
     url.each do |a|
       http = a.sub(/http:\/\//,"")
+      http.gsub!("&#8203;","")
       link = "<a href=\"http:\/\/#{http}\"> #{wrap_long_string(http)} </a>"
       content.sub!(a,link)    
       (params[:video]  = "http:\/\/"+http) if (http.match(/www.youtube.com/)) != nil

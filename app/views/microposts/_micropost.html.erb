@@ -6,7 +6,7 @@
 		<div class="postContent">
 			<h2 class="postFrom"><span class="nub"></span><%= micropost.user.name%>&nbsp;<span class="userName">@<%=micropost.user.identity%></span></h2>
 			<p class="content">
-				<% text = any_url((micropost.content))%>
+				<% text = any_url(wrap(micropost.content))%>
 				<%=sanitize wrap_mentions(text[0]), :tags => %w(a), :attributes => %w(href)%>
 				<!--<%= wrap(micropost.content) %>-->
 			</p>
