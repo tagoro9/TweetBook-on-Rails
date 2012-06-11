@@ -4,9 +4,9 @@
  TODO pagina usuarios quitar lalalalalala
  TODO estilos al mostrar los usuarios
  TODO al borrar un tweet si es desde el home, redirigirlo al home
- TODO poner logo en la pagina de inicio de sesion
  TODO arreglar contador al responder
  TODO Hacer readme en github
+ TODO terminar lo de similares a ti
  TODO Editar usuario sin cambiar contraseña
  TODO corregir field_with_errors css al registrarse de forma incorrecta
  TODO Modal con atajos de teclado
@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   
   #unless Rails.application.config.consider_all_requests_local
-    #rescue_from Exception, with: :render_500
+    rescue_from Exception, with: :render_500
     rescue_from ActionController::RoutingError, with: :render_404
     rescue_from ActionController::UnknownController, with: :render_404
     rescue_from ActionController::UnknownAction, with: :render_404
