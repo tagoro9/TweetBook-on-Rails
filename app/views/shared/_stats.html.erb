@@ -2,16 +2,16 @@
 <div class="statsContainer">
 	<ul class="stats">
 		<li>
-			<%= link_to raw("<strong>#{@user.microposts.count}</strong> tweets"), current_user %>
+			<%= link_to raw("<strong>#{@user.microposts.count}</strong><br/> tweets"), current_user %>
 		</li>
 		<li>
 			<a href="<%= following_user_path(@user) %>">
-				<strong><%= @user.following.count %></strong> siguiendo
+				<strong><%= @user.following.count %></strong><br/> siguiendo
 			</a>
 		</li>
 		<li>
 			<a href="<%= followers_user_path(@user) %>">
-				<strong><%= @user.followers.count %></strong> seguidores
+				<strong><%= @user.followers.count %></strong><br/> seguidores
 			</a>
 		</li>
 	</ul>

@@ -4,7 +4,7 @@
 			<%= gravatar_for micropost.user, :size => 50 %>
 		</div>
 		<div class="postContent">
-			<h2 class="postFrom"><span class="nub"></span><%= micropost.user.name%>&nbsp;<span class="userName">@llosimura</span></h2>
+			<h2 class="postFrom"><span class="nub"></span><%= micropost.user.name%>&nbsp;<span class="userName">@<%=micropost.user.identity%></span></h2>
 			<p class="content"><%= wrap(micropost.content) %></p>
 			<p class="more">
 				<span class="operations">

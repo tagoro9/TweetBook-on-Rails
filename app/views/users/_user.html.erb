@@ -5,5 +5,5 @@
   | <%= link_to "Borrar", user, :method => :delete, :confirm => "You sure?",
                                 :title => "Delete #{user.name}" %>
   <% end %>
-  <%= "\"" + user.microposts.first.content[0,90] + "...\"" if !user.microposts.empty? %>
+  <%= "\"" + user.desc + "...\"" if user.desc %>
 </li>

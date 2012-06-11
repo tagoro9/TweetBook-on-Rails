@@ -59,13 +59,14 @@ $(document).ready(function(){
 	$('#reply').on('show', function() {
 		data = $(this).data('data')
 		$(this).find('h3').html($(this).find('h3').html()+data['name'])
-		$(this).find('textarea').attr('value',data['name'])
+		$(this).find('textarea').attr('value','@'+data['identity']+ ' ')
 		$(this).find('.modal-footer').html(data['content'])
+		$(this).find('textarea').focus()
 	});
 	
 	$('body').on('click','a.reply',function(e) {
 	  e.preventDefault();
-	  $('#reply').data('data',{name: $(this).data('name'),content: $(this).data('content') }).modal('show');
+	  $('#reply').data('data',{name: $(this).data('name'),content: $(this).data('content'),identity: $(this).data('identity') }).modal('show');
 	});		
 	
 	//Modal para escribir nuevo tweet (al pulsar n)

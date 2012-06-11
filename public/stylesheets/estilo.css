@@ -108,13 +108,13 @@ span.desc {
 }
 
 .statsContainer .stats li {
-	display:inline;
+	display:inline-block;
 	padding-right:2px;
 	border-right: 1px solid #000;
 }
 
 .statsContainer .stats li a{
-	padding-left:5px;
+	text-transform:uppercase;
 }
 
 .statsContainer .stats li:last-child {
@@ -251,7 +251,7 @@ ul.nav li.home {
     width: 300px;
 }
 
-#user_password_confirmation{
+.front-signup #user_password_confirmation{
 	height: 18px;
     width: 190px;
 }
@@ -700,6 +700,13 @@ ul.nav li.home {
 
 form.edit_user {
 	margin-top:20px;
+}
+
+form.edit_user .field textarea {
+	width: 220px;
+	height: 50px;	
+	margin-left: 30px;
+	resize: none;
 }
 
 form.edit_user .field input{

@@ -13,7 +13,7 @@ require 'digest'
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation, :identity
+  attr_accessible :name, :email, :password, :password_confirmation, :identity, :desc
   
   has_many :microposts, :dependent => :destroy
   has_many :reverse_relationships, :foreign_key => "followed_id",
@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
   validates :identity, :presence => true,
                    :length => { :maximum => 50 },
                    :uniqueness => { :case_sensitive => false}
+  validates :desc, :length => { :maximum => 200 }
                        
   before_save :encrypt_password
   

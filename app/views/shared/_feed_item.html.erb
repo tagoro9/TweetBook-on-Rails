@@ -5,7 +5,7 @@
 			<img src="/images/NoImage.png" alt="profileImage" class="gravatar" width="50" height="50"/>
 		</div>
 		<div class="postContent">
-			<h2 class="postFrom"><span class="nub"></span><%= link_to feed_item.user.name, feed_item.user%>&nbsp;<span class="userName">@llosimura</span></h2>
+			<h2 class="postFrom"><span class="nub"></span><%= link_to feed_item.user.name, feed_item.user%>&nbsp;<span class="userName">@<%=feed_item.user.identity%></span></h2>
 			<p class="content">
 			<% text = any_url(wrap(feed_item.content))%>
 			<!--<%=sanitize text[0], :tags => %w(a), :attributes => %w(href)%>-->
@@ -38,6 +38,7 @@
 						<%=link_to "Responder", '',
 												:class => 'reply',
 												"data-name" => feed_item.user.name,
+												"data-identity" => feed_item.user.identity,
 												"data-content" => feed_item.content,
 												:title => feed_item.user.name %>			                                       						   
 					</span>&nbsp;-&nbsp;

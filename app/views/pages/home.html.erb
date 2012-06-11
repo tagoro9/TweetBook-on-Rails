@@ -7,8 +7,8 @@
 						<%= gravatar_for current_user, :size => 48%>
 					</div>
 					<div class="userName span3 offset1">
-						<%= current_user.name %><br/>
-						<small class="more">Ver mi página de perfil</small>
+						<strong><%= current_user.name %></strong><br/>
+						<small class="more"><a href="<%= user_path(current_user)%>">Ver mi página de perfil</a></small>
 					</div>
 				</div>
 				<%= render 'shared/stats'%>
