@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Bienvenido a TweetBook, <%= @user.name %></h1>
+    <p>
+    	Te has registrado correctamente.
+    </p>
+    <p>
+      Para iniciar sesión en el sitio vete a <%= link_to signin_path, signin_path%>
+    </p>
+    <p>Que tengas un buen día!</p>
+  </body>
+</html>

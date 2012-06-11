@@ -5,19 +5,20 @@
 =======
  TODO Hover sobre esquinita microposts!
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  TODO al iniciar sesion redirigir al home
  TODO pagina usuarios quitar lalalalalala
 >>>>>>> c9995bae9b3ff9e13191f4f8f3945a7fbb01744b
+=======
+>>>>>>> 689e06f607cfc54da836f33246a065ef87a475b8
  TODO estilos al mostrar los usuarios
  TODO Hacer readme en github
  TODO terminar lo de similares a ti
  TODO Editar usuario sin cambiar contraseña
- TODO corregir field_with_errors css al registrarse de forma incorrecta
  TODO Modal con atajos de teclado
  TODO action mailer
  TODO pusher
- TODO rmagick e imagenes de perfil
  TODO Hacer memoria
  TODO Hacer presentacion
   

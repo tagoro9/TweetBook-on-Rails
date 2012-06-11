@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      UserMailer.welcome_email(@user).deliver
       sign_in @user
       flash[:success] = "Bienvenido a TweetBook"
       redirect_to @user
@@ -51,6 +52,10 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
+    if params[:user][:password].blank? || !params[:user][:password_confirmation].blank?
+      params[:user].delete :password
+      params[:user].delete :password_confirmation
+    end
     if @user.update_attributes(params[:user])
       flash[:success] = "Perfil actualizado."
       redirect_to @user

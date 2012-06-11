@@ -530,6 +530,14 @@ ul.nav li.home {
 	margin-left: 30px;
 }
 
+.field_with_errors {
+	display:inline;
+}
+
+.field_with_errors input {
+	border-color: #FF2222;
+}
+
 .field input{
 	width:400px;
 	height:20px;

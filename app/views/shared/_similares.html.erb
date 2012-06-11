@@ -6,6 +6,7 @@
 			array << j.email
 		end
 		array.uniq!
+		array.delete(current_user.email)
 	end %>
 	<% for k in 0..2 %>
 		<%if (k < array.size) %>

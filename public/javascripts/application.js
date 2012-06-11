@@ -89,6 +89,8 @@ $(document).ready(function(){
 	//Modal para escribir nuevo tweet (al pulsar n)
 	$(document).bind('keydown','n',function(){
 		$('#newTweet').modal('show')
+		$('#newTweet textarea').focus()
+		setTimeout("$('#newTweet textarea').val('')",10)
 	})
 	
 	//Pills por ajax
