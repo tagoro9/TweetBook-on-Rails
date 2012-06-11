@@ -11,6 +11,7 @@ describe "Users" do
           visit root_path
           fill_in "user_name",         :with => "pepe"
           fill_in "user_email",        :with => "pepe@gmail.com"
+          fill_in "user_identity",     :with => "peep"
           fill_in "user_password",     :with => "123"
           fill_in "user_password_confirmation", :with => "12331"
           click_button "Registrar"
@@ -26,6 +27,10 @@ describe "Users" do
                                           :type => 'text',
                                           :id => 'user_email',
                                           :value => "pepe@gmail.com")
+                form.should have_selector('input',          # Caja de texto para introducir la contraseña
+                                          :type => 'text',
+                                          :id => 'user_identity',
+                                          :value => "peep")
                 form.should have_selector('input',          # Caja de texto para introducir la contraseña
                                           :type => 'password',
                                           :id => 'user_password')
@@ -47,6 +52,7 @@ describe "Users" do
           visit root_path
           fill_in "user_name",         :with => "Example User"
           fill_in "user_email",        :with => "user@example.com"
+          fill_in "user_identity",     :with => "peep"
           fill_in "user_password",     :with => "foobar"
           fill_in "user_password_confirmation", :with => "foobar"
           click_button "Registrar"
@@ -68,6 +74,7 @@ describe "Users" do
           visit signup_path
           fill_in "user_name",         :with => "pepe"
           fill_in "user_email",        :with => "pepe@gmail.com"
+          fill_in "user_identity",     :with => "peep"
           fill_in "user_password",     :with => "123"
           fill_in "user_password_confirmation", :with => "12331"
           click_button "user_submit"
@@ -83,6 +90,10 @@ describe "Users" do
                                           :type => 'text',
                                           :id => 'user_email',
                                           :value => "pepe@gmail.com")
+                form.should have_selector('input',          # Caja de texto para introducir la dirección de correo
+                                          :type => 'text',
+                                          :id => 'user_identity',
+                                          :value => "peep")
                 form.should have_selector('input',          # Caja de texto para introducir la contraseña
                                           :id => 'user_password',
                                           :type => 'password')
@@ -104,6 +115,7 @@ describe "Users" do
           visit signup_path
           fill_in "user_name",         :with => "Example User"
           fill_in "user_email",        :with => "usera@example.com"
+          fill_in "user_identity",     :with => "peep"
           fill_in "user_password",     :with => "foobar"
           fill_in "user_password_confirmation", :with => "foobar"
           click_button "user_submit"
