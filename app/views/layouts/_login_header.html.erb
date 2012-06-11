@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="<%= root_path %>"><!--<img src="images/Icono.png" alt="icono"/>-->TweetBook On Rails</a>
+          <a class="brand" href="<%= root_path %>"><img id="brandImg" src="images/Icono.png" alt="icono"/>TweetBook On Rails</a>
           <% if !/Inicio|Sign\sin/.match @title%>
 			<%=form_for(:session, :url => sessions_path, :html => {:id => 'loginArriba',:class => 'navbar-form pull-right'}) do |f| %>			
 			  		<%= f.text_field(:email, :placeholder => 'Email') %>
