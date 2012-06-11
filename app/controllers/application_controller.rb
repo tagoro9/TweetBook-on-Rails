@@ -2,6 +2,7 @@
 
 =begin
  TODO campo descripcion en el usuario
+ TODO arreglar seguidores y siguiendo en el perfil, se salta de linea
  TODO evitar XSS en video e imagenes del feed
  TODO replicar codigo imagenes y videos al perfil
  TODO Modal con atajos de teclado
