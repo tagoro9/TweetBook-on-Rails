@@ -13,6 +13,11 @@
 											:class => 'videoTweet',
 											"data-url" => "http://www.youtube.com/watch?v=tzunjg9RuKQ",
 											:title => "VideoTweet"%>
+					<i class="icon-picture"></i>
+					<%= link_to "Ver imagen", '',
+											  :class => 'imageTweet',
+											  "data-url" => "http://playasmexico.com.mx/IMG/arton1197.jpg",
+											  :title => "ImageTweet"%>
 					<% if current_user?(feed_item.user) %>
 						<i class="icon-trash"></i>
 					      <%= link_to "Borrar", '',

@@ -3,6 +3,9 @@ TweetBookOnRails::Application.routes.draw do
   
   get "sessions/new"
 
+  get 'errores/error500'
+  get 'errores/raise500'
+
   resources :users do
     member do
       get :following, :followers
@@ -21,6 +24,7 @@ TweetBookOnRails::Application.routes.draw do
   match '/cuenta', :to => 'pages#cuenta'
   match '/help', :to => 'pages#help'
   match 'about', :to => 'pages#about'
+  match '*not_found', :to => 'errores#error404'
   
   
     
