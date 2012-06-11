@@ -60,13 +60,19 @@ $(document).ready(function(){
 		data = $(this).data('data')
 		$(this).find('h3').html($(this).find('h3').html()+data['name'])
 		$(this).find('textarea').attr('value','@'+data['identity']+ ' ')
-		$(this).find('.modal-footer').html(data['content'])
+		$(this).find('.modal-footer').html(
+			'<div class="span1 avatar"><img class="gravatar" src="'+data['image']+'" alt="profileImage"/></div>' +
+			'<div class="span4">' +
+			'<strong>'+data['name']+'</strong><br/>'+
+			data['content'] + 
+			"</div>"
+		)
 		$(this).find('textarea').focus()
 	});
 	
 	$('body').on('click','a.reply',function(e) {
 	  e.preventDefault();
-	  $('#reply').data('data',{name: $(this).data('name'),content: $(this).data('content'),identity: $(this).data('identity') }).modal('show');
+	  $('#reply').data('data',{name: $(this).data('name'),content: $(this).data('content'),identity: $(this).data('identity'), image: $(this).data('image') }).modal('show');
 	});		
 	
 	//Modal para escribir nuevo tweet (al pulsar n)
