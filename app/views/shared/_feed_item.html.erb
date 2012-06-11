@@ -10,7 +10,8 @@
 			<!-- <% text = any_url(wrap((feed_item.content)))%> -->
 			<!--  <%=sanitize wrap_mentions(text[0]), :tags => %w(a), :attributes => %w(href)%> -->
 			<!--<%= raw wrap(text[0])%>-->
-			<% text = any_url((feed_item.content)) %>			
+			<% text = any_url((feed_item.content)) %>
+			<%= raw wrap(text[0])%>			
 			<%=sanitize text[0], :tags => %w(a), :attributes => %w(href)%>
 			</p>
 			<p class="more">

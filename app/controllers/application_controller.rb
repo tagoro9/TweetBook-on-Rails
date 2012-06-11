@@ -1,8 +1,10 @@
 # -*- encoding : utf-8 -*-
 
 =begin
+<<<<<<< HEAD
+=======
+ TODO Hover sobre esquinita microposts!
  TODO estilos al mostrar los usuarios
- TODO al borrar un tweet si es desde el home, redirigirlo al home
  TODO Hacer readme en github
  TODO terminar lo de similares a ti
  TODO Editar usuario sin cambiar contraseña
