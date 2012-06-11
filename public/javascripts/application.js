@@ -141,24 +141,54 @@ $(document).ready(function(){
 		}
 	})	
 	
+	//Expandir imagenes
+	$('a.imageTweet').bind('click', function(e){
+		e.preventDefault();
+		if ($(this).is('.active')) {
+			$(this).removeClass('active')
+			$(this).html("Ver imagen")
+			imagen = $(this).parent().parent().parent().find('.imagen')
+			$(imagen).css('visibility','hidden')
+			$(imagen).hide(150)
+		}
+		else {
+			$(this).addClass('active')
+			$(this).html("Ocultar imagen")
+			url = $(this).data('url')
+			hueco = $(this).parent().parent()
+			imagen = $(hueco).next('.imagen')
+			if (imagen['length'] == 0) {
+				imagen = $('<div>').addClass("imagen").html('<img width="380" src="'+ url +'" />')
+				$(this).parent().parent().after(imagen);
+			}
+			else {
+				//Mostrar imagen
+				$(imagen).show()
+				$(imagen).css('visibility','visible')
+			}
+		}
+	})
+	
 	//Expandir videos
 	$('a.videoTweet').bind('click',function(e){
 		e.preventDefault()
 		if ($(this).is('.active')) {
 			$(this).removeClass('active')
 			$(this).html("Ver vídeo")
-			video = $(this).parent().parent().next('.video')
+			video = $(this).parent().parent().parent().find('.video')
 			$(video).css('visibility','hidden')
 			$(video).hide(150)
 		}
 		else {
 			$(this).addClass('active')
 			$(this).html("Ocultar vídeo")	
+			url = $(this).data('url')
+			videoUrl = /[\?\&]v=([^\?\&]+)/.exec(url);
 			hueco = $(this).parent().parent()
 			video = $(hueco).next('.video')
 			if (video['length'] == 0) {
 				//Crear vidro
-				video = $('<div>').addClass("video").html('<iframe width="380" height="285" src="http://www.youtube.com/embed/tzunjg9RuKQ" frameborder="0" allowfullscreen></iframe>')
+				video = $('<div>').addClass("video").html('<iframe width="380" height="285" src="http://www.youtube.com/embed/'+videoUrl[1]+'" frameborder="0" allowfullscreen></iframe>')
 				$(this).parent().parent().after(video);
 			}
 			else {
