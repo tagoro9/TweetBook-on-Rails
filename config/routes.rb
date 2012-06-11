@@ -3,8 +3,8 @@ TweetBookOnRails::Application.routes.draw do
   
   get "sessions/new"
 
-  get 'errores/error404'
   get 'errores/error500'
+  get 'errores/raise500'
 
   resources :users do
     member do

@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
 
   def render_500(exception)
     @errorPage = exception
+    @title = 'Ups!'
     respond_to do |format|
       format.html { render template: 'errores/error500', layout: 'layouts/application', status: 500 }
       format.all { render nothing: true, status: 500}

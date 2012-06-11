@@ -781,14 +781,14 @@ form.edit_user .actions #user_submit {
 }
 /*********************** FIN REPLY MODAL **********************/
 
-/*********************** 404 ************************/
-#is404 {
+/*********************** 404 y 500 ************************/
+#is404, #is500 {
 	color:#FFF;
 	margin-top:20px;
 	text-align: center;
 }
 
-#is404 img {
+#is404 img, #is500 img {
 	margin-top:20px;
 	width:600px;
 	border-radius:15px;
