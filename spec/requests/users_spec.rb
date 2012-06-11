@@ -120,8 +120,8 @@ describe "Users" do
     describe "failure" do
       it "should not sign a user in" do
         visit signin_path
-        fill_in :email,    :with => ""
-        fill_in :password, :with => ""
+        fill_in :session_email,    :with => ""
+        fill_in :session_password, :with => ""
         click_button
         response.should have_selector("div.alert-error", :content => "incorrecto")
       end
@@ -131,8 +131,8 @@ describe "Users" do
       it "should sign a user in and out" do
         user = Factory(:user)
         visit signin_path
-        fill_in :email,    :with => user.email
-        fill_in :password, :with => user.password
+        fill_in :session_email,    :with => user.email
+        fill_in :session_password, :with => user.password
         click_button
         controller.should be_signed_in
         click_link "Sign out"
