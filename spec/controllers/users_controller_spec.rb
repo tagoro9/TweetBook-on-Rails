@@ -207,7 +207,7 @@ describe UsersController do
       get :edit, :id => @user
       gravatar_url = "http://gravatar.com/emails"
       response.should have_selector("a", :href => gravatar_url,
-                                         :content => "change")
+                                         :content => "Cambiar")
     end
   end
   
@@ -257,7 +257,7 @@ describe UsersController do
 
       it "should have a flash message" do
         put :update, :id => @user, :user => @attr
-        flash[:success].should =~ /updated/
+        flash[:success].should =~ /actualizado/
       end
     end
   end

@@ -15,12 +15,6 @@ describe "PresenciaDePaginas" do
         form.should have_selector('input',          # Caja de texto para introducir la contraseña
                                   :type => 'password',
                                   :id => 'session_password')
-        form.should have_selector('input',          # Casilla para hacer que la sesión no caduque al cerrar
-                                  :type => 'checkbox',
-                                  :name => 'recordar')
-        form.should have_selector('label',
-                                  :for => 'recordar',
-                                  :content => 'Recordar contraseña')
         form.should have_selector('input',          # Botón para entrar en la pagina
                                   :type => 'submit',
                                   :value => 'Entrar')

@@ -4,7 +4,7 @@ require 'spec_helper'
 describe User do
 
   before(:each) do
-    @attr = { :name => "Example User", :email => "user@example.com" , :identity => "ExampleIdentity", :password => "123456", :password_confirmation => "123456" }
+    @attr = { :name => "Example User", :email => "user@example.com" , :identity => "ExampleIdentity",:desc => "example description", :password => "123456", :password_confirmation => "123456" }
   end
 
   it "should create a new instance given valid attributes" do
@@ -19,6 +19,23 @@ describe User do
   it "should require an email address" do
     no_email_user = User.new(@attr.merge(:email => ""))
     no_email_user.should_not be_valid
+  end
+  
+  it "should require an identity" do
+    no_identity_user = User.new(@attr.merge(:identity => ""))
+    no_identity_user.should_not be_valid
+  end
+  
+  it "should reject duplicated identities" do
+    User.create!(@attr)
+    wrong_identity_user = User.new(@attr.merge(:email => "me@here.now"))
+    wrong_identity_user.should_not be_valid
+  end
+  
+  it "should reject too long descs" do
+    long_desc = "a" * 201
+    long_desc_user = User.new(@attr.merge(:desc => long_desc))
+    long_desc_user.should_not be_valid
   end
   
   it "should reject names that are too long" do

@@ -4,6 +4,7 @@ Factory.define :user do |user|
   user.name                  "Michael Hartl"
   user.email                 "mhartl@example.com"
   user.identity              "MichaelHartl"
+  user.desc                  "Soy un Factory User"
   user.password              "foobar"
   user.password_confirmation "foobar"
 end
@@ -14,6 +15,10 @@ end
 
 Factory.sequence :identity do |n|
   "Person#{n}"
+end
+
+Factory.sequence :desc do |n|
+  "I'm person#{n}'s desc!"
 end
 
 Factory.sequence :email do |n|
