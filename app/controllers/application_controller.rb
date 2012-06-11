@@ -28,6 +28,5 @@ class ApplicationController < ActionController::Base
       format.html { render template: 'errores/error500', layout: 'layouts/application', status: 500 }
       format.all { render nothing: true, status: 500}
     end
-  end
-    
+  end    
 end
