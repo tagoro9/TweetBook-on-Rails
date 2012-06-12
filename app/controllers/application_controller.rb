@@ -3,6 +3,7 @@
 =begin
  TODO Hover sobre esquinita microposts!
  TODO al iniciar sesion redirigir al home
+ TODO poner foco al darle a neuvo tweet
  TODO pagina usuarios quitar lalalalalala
  TODO estilos al mostrar los usuarios
  TODO al borrar un tweet si es desde el home, redirigirlo al home

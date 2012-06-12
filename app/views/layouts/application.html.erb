@@ -21,7 +21,7 @@
 			<%= yield %>
 			<%=render 'shared/new_tweet' if signed_in? && @micropost%>
 			<%= footer %>
-			<!--<%= debug(params) if Rails.env.development? %>-->
+			<%= debug(params) if Rails.env.development? %>
 		</div>		
 	</body>
 </html>
