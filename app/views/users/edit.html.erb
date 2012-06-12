@@ -4,7 +4,7 @@
 			<div class="well">
 				<div class="userInfo row-fluid">
 					<div class="userAvatar span1">
-						<%= gravatar_for current_user, :size => 48%>
+						<%= gravatar_for current_user, :size => :thumb%>
 					</div>
 					<div class="userName span3 offset1">
 						<%= current_user.name %><br/>
@@ -16,7 +16,7 @@
 				<h2>Similares a ti</h2>
 				<div class="similares">
 					<div class="smallUser">
-						<%= gravatar_for current_user, :size => 48 %>
+						<%= gravatar_for current_user, :size => :thumb %>
 						<span class="name"><%= link_to current_user.name, current_user %></span>
 					</div>
 				</div>
@@ -51,8 +51,11 @@
 			    	<%= f.label :password_confirmation, "Confirmacion" %>
 			    	<%= f.password_field :password_confirmation %>
 			  	</div>
-		  	  	<%= gravatar_for @user %>
-  				<a href="http://gravatar.com/emails">Cambiar</a>
+			  	<div class="field">
+			  	  	<%= gravatar_for @user %>
+	  				<!--<a href="http://gravatar.com/emails">Cambiar</a>-->
+	  				<%= f.file_field :avatar%>
+  				</div>
 			  	<div class="actions">
 			    	<%= f.submit "Actualizar" %>
 			  	</div>

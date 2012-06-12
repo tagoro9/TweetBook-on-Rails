@@ -1,7 +1,7 @@
 <div class="post">
 	<div class="row-fluid">
 		<div class="span1 avatar">
-			<%= gravatar_for micropost.user, :size => 50 %>
+			<%= gravatar_for micropost.user, :size => :thumb %>
 		</div>
 		<div class="postContent">
 			<h2 class="postFrom"><span class="nub"></span><%= micropost.user.name%>&nbsp;<span class="userName">@<%=micropost.user.identity%></span></h2>

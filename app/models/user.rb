@@ -13,7 +13,7 @@ require 'digest'
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation, :identity, :desc
+  attr_accessible :name, :email, :password, :password_confirmation, :identity, :desc, :avatar
   
   has_many :microposts, :dependent => :destroy
   has_many :reverse_relationships, :foreign_key => "followed_id",
@@ -40,6 +40,8 @@ class User < ActiveRecord::Base
   validates :desc, :length => { :maximum => 200 }
                        
   before_save :encrypt_password
+  
+  has_attached_file :avatar, :styles => { :medium => "128x128>", :thumb => ["32x32#", :png ] }, :default_url => "/images/NoImage.png"
   
   def feed
     Micropost.from_users_followed_by(self)
