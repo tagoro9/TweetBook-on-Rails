@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   end
   
   def signup
-    
+    @title = "Regístrate"
   end
   
   def about

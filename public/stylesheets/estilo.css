@@ -772,6 +772,15 @@ form.edit_user .actions #user_submit {
 .users li:nth-child(even):hover {
 	background: rgba(50,50,50,0.5);
 }
+
+
+.Numero{
+	padding-top:10px;
+	font-size:40px;
+	color:#6C009E;
+	text-align:center;
+	
+}
 /*************************FIN LISTADO DE USUARIOS ***************/
 
 /************************ SIGNIN ******************************/
