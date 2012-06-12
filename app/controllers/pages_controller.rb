@@ -32,4 +32,8 @@ class PagesController < ApplicationController
     @title = "Ayuda"
   end
   
+  def prezi
+    @title = "Prezi"
+  end
+  
 end

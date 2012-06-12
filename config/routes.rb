@@ -19,6 +19,7 @@ TweetBookOnRails::Application.routes.draw do
   resources :relationships, :only => [:create, :destroy]
   
   root :to => 'pages#home'
+  match '/prezi', :to => 'pages#prezi'
   match '/signup', :to => 'users#new' 
   match '/signin', :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'

@@ -870,22 +870,30 @@ form.edit_user .actions #user_submit {
 }
 /********************* FIN 404 ***************/
 
-/************** PAGINA ABOUT ****************/
-#about {
+/************** PAGINA ABOUT Y AYUDA ****************/
+#about, #ayuda, #prezi {
 	margin-top:20px;
 	color:#FFF;
 }
 
-#about .text h1{
+#prezi {
+	text-align:center;
+}
+
+#prezi a {
+	color: #FFF;
+}
+
+#about .text h1, #ayuda .text h1, #prezi .text h1{
 	text-align: center;
 	margin-bottom: 40px;
 }
 
-#about .text p {
+#about .text p, #ayuda .text p {
 	font-weight:bold;
 }
 
-#about .text .brand {
+#about .text .brand, #ayuda .text .brand {
 	color: #EABF09;
 	font-size: 20px;
 	font-weight:bold;
