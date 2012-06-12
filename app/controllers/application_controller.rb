@@ -4,10 +4,11 @@
  TODO Hover sobre esquinita microposts!
  TODO estilos al mostrar los usuarios
  TODO Hacer readme en github
- TODO terminar lo de similares a ti
  TODO Editar usuario sin cambiar contraseña
  TODO Modal con atajos de teclado
- TODO action mailer
+ 
+ 
+ 
  TODO pusher
  TODO Hacer memoria
  TODO Hacer presentacion
@@ -17,6 +18,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
+  include MicropostsHelper
   
   #unless Rails.application.config.consider_all_requests_local
     #rescue_from Exception, with: :render_500
