@@ -11,8 +11,8 @@
 	<% for k in 0..2 %>
 		<%if (k < array.size) %>
 			<div class="smallUser">
-				<%= gravatar_for current_user, :size => :thumb %>
 				<% num = rand(array.size) %>
+				<%= gravatar_for User.find_by_email(array[num]), :size => :thumb %>
 				<span class="name"><%= link_to (User.find_by_email(array[num])).name, array[k] %></span>
 				<% array.delete array[num] %>
 			</div>

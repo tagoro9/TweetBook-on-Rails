@@ -12,7 +12,8 @@ class MicropostsController < ApplicationController
         Pusher["private-#{User.find_by_identity(mention).id}"].trigger('notification', {:from => current_user.identity, :subject => "te ha mencionado"})
       end
       flash[:success] = "Micropost creado!"
-      redirect_to :back
+      #redirect_to :back
+      redirect_to root_path
     else
       @feed_items = []
       render 'pages/home'
@@ -21,7 +22,8 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost.destroy
-    redirect_to :back
+    #redirect_to :back
+    redirect_back_or @micropost.user
   end
 
   private

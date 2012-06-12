@@ -202,13 +202,6 @@ describe UsersController do
       get :edit, :id => @user
       response.should have_selector("title", :content => "Configurar")
     end
-
-    it "should have a link to change the Gravatar" do
-      get :edit, :id => @user
-      gravatar_url = "http://gravatar.com/emails"
-      response.should have_selector("a", :href => gravatar_url,
-                                         :content => "Cambiar")
-    end
   end
   
   describe "PUT 'update'" do

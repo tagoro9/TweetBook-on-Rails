@@ -33,4 +33,23 @@ TweetBookOnRails::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'gmail.com',
+    :user_name            => 'tweetbookonrails@gmail.com',
+    :password             => '1qw23er45ty67ui89op0',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }   
+
+  require 'pusher'
+
+  Pusher.app_id = '20499'
+  Pusher.key = '2282e820214488780027'
+  Pusher.secret = '07d6541c5e3249618bfa'
+    
+  
 end
