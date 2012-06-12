@@ -2,7 +2,6 @@
 
 =begin
  TODO Hover sobre esquinita microposts!
- TODO al iniciar sesion redirigir al home
  TODO estilos al mostrar los usuarios
  TODO Hacer readme en github
  TODO terminar lo de similares a ti
