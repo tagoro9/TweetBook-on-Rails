@@ -25,7 +25,7 @@
 		<div class="span7 offset4 well">
 			<h1 class="title">Cuenta</h1>
 			<span class="desc">Cambia tu configuración de cuenta básica.</span>
-			<%= form_for(@user) do |f| %>
+			<%= form_for(@user,:html => {:multipart => true}) do |f| %>
 		  		<%= render 'shared/error_messages', :object => f.object %>
 			  	<div class="field">
 			    	<%= f.label :name, "Nombre" %>

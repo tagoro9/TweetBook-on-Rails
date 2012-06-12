@@ -1,8 +1,8 @@
 <div class="post">
 	<div class="row-fluid">
 		<div class="span1 avatar">
-			<!--<%= gravatar_for feed_item.user, :size => 50 %>-->
-			<img src="/images/NoImage.png" alt="profileImage" class="gravatar" width="50" height="50"/>
+			<%= gravatar_for feed_item.user, :size => :thumb %>
+			<!--<img src="/images/NoImage.png" alt="profileImage" class="gravatar" width="50" height="50"/>-->
 		</div>
 		<div class="postContent">
 			<h2 class="postFrom"><span class="nub"></span><%= link_to feed_item.user.name, feed_item.user%>&nbsp;<span class="userName">@<%=feed_item.user.identity%></span></h2>

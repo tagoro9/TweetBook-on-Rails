@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
                        
   before_save :encrypt_password
   
-  has_attached_file :avatar, :styles => { :medium => "128x128>", :thumb => ["32x32#", :png ] }, :default_url => "/images/NoImage.png"
+  has_attached_file :avatar, :styles => { :medium => "128x128>", :thumb => ["50x50#", :png ] }, :default_url => "/images/NoImage.png"
   
   def feed
     Micropost.from_users_followed_by(self)
