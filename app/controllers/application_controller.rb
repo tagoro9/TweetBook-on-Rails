@@ -4,17 +4,12 @@
 
  //OPCIONAL
 
- TODO Hover sobre esquinita microposts!
- TODO al iniciar sesion redirigir al home
- TODO pagina usuarios quitar lalalalalala
- TODO estilos al mostrar los usuarios
  TODO Hacer readme en github
  TODO Editar usuario sin cambiar contraseña
  TODO Modal con atajos de teclado
  
  OBLIGADOOOOOOOOOOOOOOOOOOOO!
  
- TODO pusher
  TODO Hacer memoria
  TODO Hacer presentacion
   
