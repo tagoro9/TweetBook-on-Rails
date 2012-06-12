@@ -12,7 +12,7 @@ module MicropostsHelper
     params = Hash.new
     url = URI.extract(content)
     url.each do |a|
-      link = "<a href=\"#{a}\"> #{a.sub(/https?:\/\//,"")} </a>"
+      link = "<a href=\"#{a}\"> #{a.sub(/https?:\/\//,"").slice!(0..30)} </a>"
       content.sub!(a,link)    
       (params[:video]  = a) if (a.match(/youtube/)) != nil
       (params[:imagen] = a) if (a.match(/(jpe?g$)|(.png$)/i)) != nil

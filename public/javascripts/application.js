@@ -28,6 +28,17 @@ $(document).ready(function(){
 		}
 	})
 	
+	$("#modalPostContent > textarea").on("keyup", function(){
+		valor = 140 - $(this).val().length
+		$(".modalActions #modalCharactersLeft").html(valor)
+		if (($(this).val().length) > 140 || $(this).val().length == 0) {
+			$(this).parent().parent().find('#micropost_submit').attr('disabled','disabled')	
+		}
+		else {
+			$(this).parent().parent().find('#micropost_submit').removeAttr('disabled')
+		}
+	})
+	
 	//Cambiar tamaño de textarea de micropost al escribir
 	$('#postContent > #micropost_content').focus(function(){
 		$(this).css('height','90px')
