@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 module MicropostsHelper
 
+  require "uri"
+  
   def wrap(content)
     raw(content.split.map{ |s| wrap_long_string(s) }.join(' '))
   end
@@ -8,14 +10,12 @@ module MicropostsHelper
   def any_url (text)
     content = text.clone
     params = Hash.new
-    url = content.scan(/(?:http:\/\/)?www\.\w+.\S+/)
+    url = URI.extract(content)
     url.each do |a|
-      http = a.sub(/http:\/\//,"")
-      http.gsub!("&#8203;","")
-      link = "<a href=\"http:\/\/#{http}\"> #{wrap_long_string(http)} </a>"
+      link = "<a href=\"#{a}\"> #{a.sub(/https?:\/\//,"")} </a>"
       content.sub!(a,link)    
-      (params[:video]  = "http:\/\/"+http) if (http.match(/www.youtube.com/)) != nil
-      (params[:imagen] = "http:\/\/"+http) if (http.match(/\www\.\w+.\S+.jpe?g/)) != nil
+      (params[:video]  = a) if (a.match(/youtube/)) != nil
+      (params[:imagen] = a) if (a.match(/(jpe?g$)|(.png$)/i)) != nil
     end
     [content,params]
   end

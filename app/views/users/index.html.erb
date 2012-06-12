@@ -2,10 +2,22 @@
 	<div class="row-fluid">
 		<div class="leftBar span4">
 			<div class="well">
-				lalalaallaalalalal
+				<h4>Personas en nuestra comunidad </h4>
+				<div class="Numero">
+					<%= @users.count %>
+				</div>
 			</div>
 			<div class="well">
-				lalalalalaala
+				<div class="userInfo row-fluid">
+					<div class="userAvatar span1">
+						<%= gravatar_for current_user, :size => 48%>
+					</div>
+					<div class="userName span3 offset1">
+						<strong><%= current_user.name %></strong><br/>
+						<small class="more"><a href="<%= user_path(current_user)%>">Ver mi página de perfil</a></small>
+					</div>
+				</div>
+				<%= render 'shared/stats'%>
 			</div>
 		</div>
 		<div class="timeLine span7 offset4 well">
