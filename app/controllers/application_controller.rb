@@ -1,23 +1,18 @@
 # -*- encoding : utf-8 -*-
 
 =begin
-<<<<<<< HEAD
-=======
+
+ //OPCIONAL
+
  TODO Hover sobre esquinita microposts!
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
  TODO al iniciar sesion redirigir al home
  TODO pagina usuarios quitar lalalalalala
->>>>>>> c9995bae9b3ff9e13191f4f8f3945a7fbb01744b
-=======
->>>>>>> 689e06f607cfc54da836f33246a065ef87a475b8
  TODO estilos al mostrar los usuarios
  TODO Hacer readme en github
  TODO Editar usuario sin cambiar contraseña
  TODO Modal con atajos de teclado
  
- 
+ OBLIGADOOOOOOOOOOOOOOOOOOOO!
  
  TODO pusher
  TODO Hacer memoria
@@ -31,7 +26,7 @@ class ApplicationController < ActionController::Base
   include MicropostsHelper
   
   #unless Rails.application.config.consider_all_requests_local
-    #rescue_from Exception, with: :render_500
+    rescue_from Exception, with: :render_500
     rescue_from ActionController::RoutingError, with: :render_404
     rescue_from ActionController::UnknownController, with: :render_404
     rescue_from ActionController::UnknownAction, with: :render_404
