@@ -3,19 +3,13 @@
 =begin
  TODO Hover sobre esquinita microposts!
  TODO al iniciar sesion redirigir al home
- TODO poner foco al darle a neuvo tweet
- TODO pagina usuarios quitar lalalalalala
  TODO estilos al mostrar los usuarios
- TODO al borrar un tweet si es desde el home, redirigirlo al home
- TODO arreglar contador al responder
  TODO Hacer readme en github
  TODO terminar lo de similares a ti
  TODO Editar usuario sin cambiar contraseña
- TODO corregir field_with_errors css al registrarse de forma incorrecta
  TODO Modal con atajos de teclado
  TODO action mailer
  TODO pusher
- TODO rmagick e imagenes de perfil
  TODO Hacer memoria
  TODO Hacer presentacion
   
