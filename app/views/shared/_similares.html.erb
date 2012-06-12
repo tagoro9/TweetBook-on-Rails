@@ -1,0 +1,19 @@
+<h2>Similares a ti</h2>
+<div class="similares">
+	<%array=[]
+	for i in current_user.following do
+		for j in i.following do
+			array << j.email
+		end
+		array.uniq!
+		array.delete(current_user.email)
+	end %>
+	<% for k in 0..2 %>
+		<%if (k < array.size) %>
+			<div class="smallUser">
+				<%= gravatar_for current_user, :size => :thumb %>
+				<span class="name"><%= link_to (User.find_by_email(array[rand(array.size)])).name, array[k] %></span>
+			</div>
+		<%end%>
+	<% end %>
+</div>
