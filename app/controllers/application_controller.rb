@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 
 =begin
+ TODO Hover sobre esquinita microposts!
  TODO pagina usuarios quitar lalalalalala
  TODO estilos al mostrar los usuarios
  TODO al borrar un tweet si es desde el home, redirigirlo al home
