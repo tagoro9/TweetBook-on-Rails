@@ -4,6 +4,7 @@ module UsersHelper
     
     classes = 'gravatar'
     classes += " thumb" if (user.avatar.url(options[:size]) =~ /NoImage\.png/i) && (options[:size] == :thumb)
+    classes += " mini" if (user.avatar.url(options[:size]) =~ /NoImage\.png/i) && (options[:size] == :mini)
     image_tag user.avatar.url(options[:size]), :alt => h(user.name), :class => classes
     #"#{classes} -- #{user.avatar.url(options[:size])}"
     
