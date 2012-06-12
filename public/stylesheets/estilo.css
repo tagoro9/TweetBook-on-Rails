@@ -972,3 +972,10 @@ ul.polaroids a {
 }
 
 /*************** FIN ABOUT ******************/
+
+/*************** PAGINATION OVERRIDE******************/
+.pagination{
+	margin-left: 25px;
+	text-align: center;	
+}
+
