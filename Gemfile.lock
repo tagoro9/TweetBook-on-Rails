@@ -66,6 +66,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     mojombo-chronic (0.3.0)
+    multi_json (1.3.6)
     nokogiri (1.5.0)
     nokogiri (1.5.0-x86-mingw32)
     paperclip (3.0.4)
@@ -75,6 +76,9 @@ GEM
       cocaine (>= 0.0.2)
       mime-types
     polyglot (0.3.3)
+    pusher (0.9.4)
+      multi_json (~> 1.0)
+      signature (~> 0.1.2)
     rack (1.2.5)
     rack-mount (0.6.14)
       rack (>= 1.0.0)
@@ -124,6 +128,7 @@ GEM
     ruby_parser (2.3.1)
       sexp_processor (~> 3.0)
     sexp_processor (3.2.0)
+    signature (0.1.3)
     sqlite3 (1.3.3)
     sqlite3 (1.3.3-x86-mingw32)
     test-construct (1.2.0)
@@ -155,6 +160,7 @@ DEPENDENCIES
   jscruggs-metric_fu
   magic_encoding
   paperclip
+  pusher
   rails (= 3.0.11)
   reek
   rmagick (= 2.13.1)

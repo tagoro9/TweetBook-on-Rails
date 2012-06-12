@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 TweetBookOnRails::Application.routes.draw do
   
+  post 'pusher/auth'
+  
   get "sessions/new"
 
   get 'errores/error404'

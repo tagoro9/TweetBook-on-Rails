@@ -57,4 +57,11 @@ TweetBookOnRails::Application.configure do
     :password             => '1qw23er45ty67ui89op0',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }  
+    
+  require 'pusher'
+
+  Pusher.app_id = '20499'
+  Pusher.key = '2282e820214488780027'
+  Pusher.secret = '07d6541c5e3249618bfa'    
+    
 end

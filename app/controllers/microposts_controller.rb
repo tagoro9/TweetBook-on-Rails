@@ -9,6 +9,7 @@ class MicropostsController < ApplicationController
       #Detectar menciones
       find_mentions(@micropost.content).each do |mention|
         UserMailer.mention_email(User.find_by_identity(mention),current_user).deliver
+        Pusher["private-#{User.find_by_identity(mention).id}"].trigger('notification', {:from => current_user.identity, :subject => "te ha mencionado"})
       end
       flash[:success] = "Micropost creado!"
       redirect_to :back

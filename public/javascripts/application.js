@@ -8,7 +8,40 @@ function scrollTo(element) {
      }, 500);	*/
 }
 
+function notify(msg) {
+	noti = $('<div>').addClass("alert").html(
+		'<a data-dismiss="alert" class="close" type="button">×</a>' + msg
+		)
+	$('#notifications').prepend(noti)
+}
+
 $(document).ready(function(){
+	//Conectarse a pusher si se esta logueado
+	  $(function() {
+	  	var user_id = $('#user_id_pusher').val();
+	  	if (user_id) {
+		    var pusher = new Pusher('2282e820214488780027');
+		    var channel = pusher.subscribe('private-' + user_id);
+		    // Some useful debug msgs
+		    /*pusher.connection.bind('connecting', function() {
+		      $('div#statusPusher').text('Connecting to Pusher...');
+		    });
+		    pusher.connection.bind('connected', function() {
+		      $('div#statusPusher').text('Connected to Pusher!');
+		    });
+		    pusher.connection.bind('failed', function() {
+		      $('div#statusPusher').text('Connection to Pusher failed :(');
+		    });
+		    channel.bind('subscription_error', function(status) {
+		      $('div#status').text('Pusher subscription_error');
+		    });*/
+		    
+		    channel.bind('notification', function(data) {
+  				msg = "@"+data['from'] + ' ' + data['subject']
+  				notify(msg)
+			});
+	    }
+	  });
 	
 	//Activar scripts sobre dropdowns
 	$('.dropdown-toggle').dropdown()

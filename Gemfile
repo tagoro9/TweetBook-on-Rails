@@ -20,6 +20,7 @@ gem 'rmagick', '2.13.1'
 gem 'magic_encoding'
 gem 'paperclip'
 gem 'jscruggs-metric_fu'
+gem 'pusher'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
