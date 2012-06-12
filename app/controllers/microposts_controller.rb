@@ -14,7 +14,7 @@ class MicropostsController < ApplicationController
     end
   end
 
-  def destroy    
+  def destroy
     @micropost.destroy
     redirect_back_or @micropost.user
   end
